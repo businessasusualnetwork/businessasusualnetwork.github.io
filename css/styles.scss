@@ -146,7 +146,20 @@ body {
 		min-height: 570px;
 		height: 100vh;
 		background-image: url('../i/hero-gradient.png');
-		background-size: contain;
+		// fallback image
+
+
+		background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
+		background: linear-gradient(to right, #2E21A5 , #000000);
+		// linear gradient
+
+		background: -webkit-linear-gradient(left top, #2E21A5, #000000);
+		background: -o-linear-gradient(bottom right, #2E21A5, #000000);
+		background: -moz-linear-gradient(bottom right, #2E21A5, #000000);
+		background: linear-gradient(to bottom right, #2E21A5, #000000);
+		// diagonal gradient
+		        
+		
 
 		.half.left {
 			position: relative;
@@ -378,10 +391,8 @@ body {
 			font-size: 49px;
 			line-height: 65px;
 		}
-
 	  }
-
-
+	  
 	  .hero {
 	  	min-height: 100vh;
 	  	height: auto !important;
