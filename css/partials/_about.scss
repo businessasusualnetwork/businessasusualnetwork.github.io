@@ -1,5 +1,62 @@
 // about: homepage start
 
 section.about {
+	min-height: 400px;
+	.header {
+		width: 30%;
+		float: left;
 
+		h2 {
+			span {
+				position: relative;
+
+				&:after {
+					content: " ";
+					height: 5px;
+					width: 43px;
+					display: inline-block;
+					background: $eggplant;
+					position: absolute;
+					bottom: 2px;
+					left: 0;
+				}
+			}
+		}
+
+		h3 {
+			color: $eggplant;
+			padding-top: 5px;
+			padding-left: 36px;
+			position: relative;
+
+			&:after {
+				content: "";
+					background: url(../i/shapes_about/frame.png) no-repeat;
+				    display: block;
+				    width: 310px;
+				    height: 363px;
+				    position: absolute;
+			        top: -227px;
+			        left: -40px;
+			        z-index: 100;
+			}
+		}
+	}
+
+	.copy-section {
+		width: 70%;
+		float: left;
+		position: relative;
+
+		.inner-wrapper {
+			position: absolute;
+			z-index: 100;
+			left: -60px;
+		}
+
+		.text-link {
+			float: right;
+			display: inline-block;
+		}
+	}
 }

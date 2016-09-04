@@ -1,12 +1,46 @@
 .speakers {
+	background: url(../i/hp-about-bkg.png);
+	background-repeat: no-repeat; 
 	.header {
 		margin-bottom: 100px;
+		position: relative;
+
+		&:after{
+			content:" ";
+			background: url(../i/shapes_about/header-circle.png) no-repeat;
+		    display: block;
+		    width: 130px;
+		    height: 160px;
+		    position: absolute;
+		    top: -42px;
+		    left: -40px;
+		    z-index: -1;		
+		}
+
+		span {
+			position: relative;
+			&:after{
+				content: " ";
+				height: 5px;
+				width: 43px;
+				display: inline-block;
+				background: $eggplant;
+				position: absolute;
+				bottom: 2px;
+				left: 0;
+			}
+		}
+
+		h3 {
+			padding-top: 15px;
+			padding-left: 55px;
+		}
 	}
 
 	.speaker-wrapper {
 		margin: 40px 70px;
 		.speaker {
-			margin-bottom: 100px;
+			margin-bottom: 150px;
 
 		&:nth-child(odd) {
 			.image-container {
@@ -128,7 +162,7 @@
 
 				h6 {
 					position: absolute;
-					top: -25px;
+					top: -28px;
 					font-size: 14px;
 				}
 
@@ -177,8 +211,6 @@
 				width: 50%;
 
 				blockquote {
-					max-width: 250px;
-					text-align: center;
 
 					&:before {
 						content: " ";
@@ -188,12 +220,16 @@
 						width: 20px;
 						background-repeat: no-repeat;
 						margin: 0 auto;
-
 					}
 				}
 
 				.speaker-info {
 					position: relative;
+					padding-top: 25px;
+
+					p {
+						margin-top: 5px;
+					}
 				}
 			}
 		}

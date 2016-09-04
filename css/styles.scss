@@ -13,14 +13,13 @@ $lato: 'Lato', sans-serif;
 $light: 300;
 $reg: 400;
 
-<<<<<<< HEAD
-
 a{
 	text-decoration: none;
-=======
 // colors
 $violet: #A30DB8; 
 $indigo: #2C209D;
+$eggplant: #8830E8;
+$lavender: #DFC0EA;
 $teal: #2CBACC;
 
 $white: #ffffff;
@@ -45,6 +44,10 @@ $black-hover: #616161;
 	color: $indigo;
 }
 
+.eggplant {
+	color: $eggplant;
+}
+
 .teal {
 	color: $teal;
 }
@@ -55,7 +58,6 @@ $black-hover: #616161;
 
 .black {
 	color: $black;
->>>>>>> About and speaker section skinning
 }
 
 h1,
@@ -77,7 +79,8 @@ h1 {
 	color: $black;
 	font-style: italic;
 	text-transform: uppercase;
-	letter-spacing: 3.5px
+	letter-spacing: 3.5px;
+	font-weight: $reg;
 }
 
 h3 {
@@ -107,7 +110,6 @@ h4 {
 	text-align: center;
 }
 
-<<<<<<< HEAD
 // colors
 $violet: #A30DB8; 
 $indigo: #2C209D;
@@ -130,10 +132,8 @@ $grey: #6B6B6B;
 .teal {
 	color: $teal;
 	text-decoration: none;
-=======
 .upcase {
 	text-transform: uppercase;
->>>>>>> About and speaker section skinning
 }
 .small-copy {
 	font-size: 12px;
@@ -178,7 +178,7 @@ $grey: #6B6B6B;
 
 a {
 	color: $violet;
-	@include transition(all 2s ease-in-out);
+	@include transition(all 0.3s ease-in-out);
 	text-decoration: none;
 
 	&:hover,
@@ -189,8 +189,10 @@ a {
 }
 
 a.text-link {
-	border-bottom: 1px solid $violet;
-	@include transition(all 0.2s ease-in-out);
+	span {
+		border-bottom: 1px solid $violet;
+		@include transition(all 0.3s ease-in-out);
+	}
 	&:after{
 		content: " ";
 		background: url(../i/arrow.png);
@@ -204,7 +206,10 @@ a.text-link {
 
 	&:hover,
 	&:active {
-		color: $violet;
+		span {	
+			color: $violet;
+		}
+
 		&:after {
 			content: " ";
 			left: 5px;
@@ -218,23 +223,22 @@ a.small-link {
 	font-size: 12px;
 	border-bottom: 1px solid $black;
 
-	&:hover, 
+	&:hover,
 	&:active {
 		color: $black-hover;
 		border-bottom: 1px solid $black-hover;
-
 	}
 }
 
 // buttons
 
 .btn--secondary {
-	padding: 7px;
+	padding: 5px;
 	border-radius: 30px;
 	text-align: center;
 	font-size: 14px;
 	font-weight: 300;
-	max-width: 70%;
+	max-width: 168px;
 	background: $white;
 	color: $violet;
 	font-weight: $light;
@@ -242,7 +246,9 @@ a.small-link {
 	display: block;
 	position: relative;
 	top: 30px;
-	transition: all 0.5s ease;
+	font-style: italic;
+	display: block;
+	@include transition(all 0.3s ease-in-out);
 
 	&:hover,
 	&:active {
@@ -270,6 +276,11 @@ body {
 	color: $grey;
 	overflow-x: hidden;
 
+	section {
+		padding: 100px 20px;
+		clear: both;
+	}
+
 	.outer-wrapper {
 		overflow-x: hidden;
 	}
@@ -281,14 +292,10 @@ body {
 
 	.hero {
 		padding: 100px 40px 130px 40px;
-<<<<<<< HEAD
 		height: 100vh;
-=======
 		min-height: 570px;
->>>>>>> About and speaker section skinning
 		background-image: url('../i/hero-gradient.png');
 		// fallback image
-
 
 		background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
 		background: linear-gradient(to right, #2E21A5 , #000000);
@@ -299,8 +306,6 @@ body {
 		background: -moz-linear-gradient(bottom right, #2E21A5, #000000);
 		background: linear-gradient(to bottom right, #2E21A5, #000000);
 		// diagonal gradient
-		        
-		
 
 		.half.left {
 			position: relative;
@@ -559,11 +564,3 @@ body {
 	  	}
 	}
 }
-
-
-
-
-// Partials 
-
-@import "partials/about";
-@import "partials/speakers";
