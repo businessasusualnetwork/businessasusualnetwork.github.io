@@ -249,11 +249,25 @@ a.small-link {
 	font-style: italic;
 	display: block;
 	@include transition(all 0.3s ease-in-out);
+	a {	
+		padding: 5px;
+		border-radius: 30px;
+		text-align: center;
+		font-size: 14px;
+		font-weight: 300;
+		min-width: 168px;
+		background: $white;
+		color: $violet;
+		font-weight: $light;
+		font-style: italic;
+		display: block;
+		@include transition(all 0.3s ease-in-out);
 
-	&:hover,
-	&:active {
-		background: $violet;
-		color: $white;
+		&:hover,
+		&:active {
+			background: $violet;
+			color: $white;
+		}
 	}
 }
 
@@ -516,6 +530,10 @@ body {
 				z-index: 5;
 				position: relative;
 			}
+
+			button {
+				float: right;
+			}
 		}
 	}
 }
@@ -543,24 +561,26 @@ body {
 		}
 	  }
 	  
-	  .hero {
+		  .hero {
 
-	  	.half {
-	  		&.right {
-	  			margin-top: 0;
-	  		}
-	  	}
+			  	.half {
+			  		&.right {
+			  			margin-top: 0;
+			  		}
+			  	}
 
-	  	  .event-info {
-	  	  	min-width: 100%;
-	  	  	float: none;
-	  	  	margin-top: 120px;
-	  	  	margin-bottom: 0;
+			  	  .event-info {
+			  	  	min-width: 100%;
+			  	  	float: none;
+			  	  	margin-top: 120px;
+			  	  	margin-bottom: 0;
 
-	  		  	.btn--secondary {
-	  		  		width: 100%;
-	  		  		font-size: 12px;
-	  		}
-	  	}
+			  		  	.btn--secondary {
+			  		  		width: 100%;
+			  		  		font-size: 12px;
+			  		}
+			  	}
+			}
+		}
 	}
 }
