@@ -13,9 +13,49 @@ $lato: 'Lato', sans-serif;
 $light: 300;
 $reg: 400;
 
+<<<<<<< HEAD
 
 a{
 	text-decoration: none;
+=======
+// colors
+$violet: #A30DB8; 
+$indigo: #2C209D;
+$teal: #2CBACC;
+
+$white: #ffffff;
+$black: #000000;
+$vulcan: #17161B;
+$grey: #6B6B6B;
+
+// color hover
+
+$violet-hover: #960CA3;
+$black-hover: #616161;
+
+.violet {
+	color: $violet;
+}
+
+.violet-hover {
+	color: $violet-hover;
+}
+
+.indigo {
+	color: $indigo;
+}
+
+.teal {
+	color: $teal;
+}
+
+.white {
+	color: $white;
+}
+
+.black {
+	color: $black;
+>>>>>>> About and speaker section skinning
 }
 
 h1,
@@ -32,8 +72,17 @@ h1 {
 	font-size: 64px;
 }
 
+.section-header {
+	font-size: 50px;
+	color: $black;
+	font-style: italic;
+	text-transform: uppercase;
+	letter-spacing: 3.5px
+}
+
 h3 {
 	font-size: 20px;
+	font-weight: $light;
 }
 
 h4 {
@@ -58,6 +107,7 @@ h4 {
 	text-align: center;
 }
 
+<<<<<<< HEAD
 // colors
 $violet: #A30DB8; 
 $indigo: #2C209D;
@@ -80,12 +130,14 @@ $grey: #6B6B6B;
 .teal {
 	color: $teal;
 	text-decoration: none;
+=======
+.upcase {
+	text-transform: uppercase;
+>>>>>>> About and speaker section skinning
 }
-
-.white {
-	color: $white;
+.small-copy {
+	font-size: 12px;
 }
-
 
 // layout 
 
@@ -110,6 +162,72 @@ $grey: #6B6B6B;
 
 // UI elements
 
+// link
+
+	// ANIMATION
+	$timing: 2s;
+	$style: linear;
+
+	@mixin transition($args) {
+	  transition: $args;
+	  -webkit-transition: $args;
+	  -moz-transition: $args;
+	  -ms-transition: $args;
+	  -o-transition: $args;
+	}
+
+a {
+	color: $violet;
+	@include transition(all 2s ease-in-out);
+	text-decoration: none;
+
+	&:hover,
+	&:active {
+		color: lighten($violet, 25%);
+
+	}
+}
+
+a.text-link {
+	border-bottom: 1px solid $violet;
+	@include transition(all 0.2s ease-in-out);
+	&:after{
+		content: " ";
+		background: url(../i/arrow.png);
+		position: relative;
+		left: 0;
+		height: 11px;
+		width: 11px;
+		display: inline-block;
+		@include transition(all 0.3s ease-in-out);
+	}
+
+	&:hover,
+	&:active {
+		color: $violet;
+		&:after {
+			content: " ";
+			left: 5px;
+
+		}
+	}
+}
+
+a.small-link {
+	color: $black;
+	font-size: 12px;
+	border-bottom: 1px solid $black;
+
+	&:hover, 
+	&:active {
+		color: $black-hover;
+		border-bottom: 1px solid $black-hover;
+
+	}
+}
+
+// buttons
+
 .btn--secondary {
 	padding: 7px;
 	border-radius: 30px;
@@ -131,6 +249,10 @@ $grey: #6B6B6B;
 		background: $violet;
 		color: $white;
 	}
+}
+
+img {
+	max-width: 100%;
 }
 
 
@@ -159,7 +281,11 @@ body {
 
 	.hero {
 		padding: 100px 40px 130px 40px;
+<<<<<<< HEAD
 		height: 100vh;
+=======
+		min-height: 570px;
+>>>>>>> About and speaker section skinning
 		background-image: url('../i/hero-gradient.png');
 		// fallback image
 
@@ -413,8 +539,6 @@ body {
 	  }
 	  
 	  .hero {
-	  	min-height: 100vh;
-	  	height: auto !important;
 
 	  	.half {
 	  		&.right {
@@ -431,9 +555,15 @@ body {
 	  		  	.btn--secondary {
 	  		  		width: 100%;
 	  		  		font-size: 12px;
-	  		  	}
-	  	  }
-	  }
+	  		}
+	  	}
+	}
 }
 
 
+
+
+// Partials 
+
+@import "partials/about";
+@import "partials/speakers";
