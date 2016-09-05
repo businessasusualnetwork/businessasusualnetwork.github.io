@@ -32,6 +32,16 @@ $grey: #6B6B6B;
 $violet-hover: #960CA3;
 $black-hover: #616161;
 
+// mqs 
+$small:"(min-width: 768px)";
+$medium: "(min-width: 1024px)";
+
+// helpers
+.hide {
+	display: none;
+}
+
+
 .violet {
 	color: $violet;
 }
@@ -248,24 +258,29 @@ a.small-link {
 	top: 30px;
 	font-style: italic;
 	display: block;
+	border-radius: 30px;
+	background: $white;
+	border: none;
+
 	@include transition(all 0.3s ease-in-out);
 	a {	
 		padding: 5px;
-		border-radius: 30px;
 		text-align: center;
 		font-size: 14px;
 		font-weight: 300;
 		min-width: 168px;
-		background: $white;
 		color: $violet;
 		font-weight: $light;
 		font-style: italic;
 		display: block;
 		@include transition(all 0.3s ease-in-out);
+	}
 
-		&:hover,
-		&:active {
-			background: $violet;
+	&:hover,
+	&:active {
+		background: $violet;
+
+		a {
 			color: $white;
 		}
 	}
@@ -275,8 +290,6 @@ img {
 	max-width: 100%;
 }
 
-
-// 
 
 body,
 html {
@@ -301,6 +314,13 @@ body {
 
 	.inner-wrapper {
 		max-width: 905px;
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	.inner-wrapper-wide {
+		max-width: 1065px;
+		width: 90%;
 		margin: 0 auto;
 	}
 
@@ -533,6 +553,9 @@ body {
 
 			button {
 				float: right;
+				position: relative;
+				top: 30px;
+
 			}
 		}
 	}
@@ -584,3 +607,4 @@ body {
 		}
 	}
 }
+

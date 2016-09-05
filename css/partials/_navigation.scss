@@ -35,6 +35,17 @@
 		  		color: $violet;
 		  	}
 		  }
+
+	@media #{$medium} {
+	  padding: 30px;
+	  -webkit-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+	  -moz-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+	  box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+	  background: $white;
+	  display: block;
+	  width: 100%;
+	  position: fixed;
+	  z-index: 101;
 	}
 
 	.nav-overlay {
@@ -64,6 +75,7 @@
 	    background: linear-gradient(to bottom right, #2E21A5, #000000);
 	    // diagonal gradient
 	    opacity: 0.95;
+	    background: RGBA(13, 9, 45, 0.97);
 
 	    @media #{$medium} {
 	    	visibility: hidden;
@@ -139,7 +151,6 @@
 			float: left;
 			width: 90%;
 			position: static;
-			display: block;
 		}
 
 		ul {
@@ -185,6 +196,7 @@
 					@media #{$medium} { 
 					font-size: 17px;
 					color: $grey;
+					margin: 0 25px;
 					border-bottom: 1px solid transparent;
 					padding: 0 0 5px 0;
 					display: inline;
@@ -194,6 +206,8 @@
 					&:active {
 						color: $white;
 						opacity: 0.3;
+						border-bottom: 1px solid $violet;
+						opacity: 1;
 
 						@media #{$medium} { 
 							opacity: 1;

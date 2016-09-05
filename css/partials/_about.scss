@@ -2,6 +2,28 @@
 
 section.about {
 	min-height: 400px;
+	.inner-wrapper {
+		position: relative;
+		&:before{
+			content: '+';
+			font-family: $lato;
+			color: $violet;
+			font-size: 105px;
+			position: absolute;
+			right: -90px;
+			top: -100%;
+		}
+
+		&:after {
+			content: '+';
+			font-family: $lato;
+			color: $violet;
+			font-size: 127px;
+			position: absolute;
+			right: -122px;
+			top: -59%;
+		}
+	}
 	.header {
 		width: 30%;
 		float: left;
@@ -48,7 +70,7 @@ section.about {
 		float: left;
 		position: relative;
 
-		.inner-wrapper {
+		.inner-wrapper-copy {
 			position: absolute;
 			z-index: 100;
 			left: -60px;
