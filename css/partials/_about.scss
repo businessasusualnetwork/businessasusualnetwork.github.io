@@ -4,29 +4,45 @@ section.about {
 	min-height: 400px;
 	.inner-wrapper {
 		position: relative;
+
+		@media #{$small} {
+			width: 650px;
+		}
+
+		@media #{$medium} {
+			width: 724px;
+		}
 		&:before{
-			content: '+';
-			font-family: $lato;
-			color: $violet;
-			font-size: 105px;
-			position: absolute;
-			right: -90px;
-			top: -100%;
+			@media #{$small} {
+				content: '+';
+				font-family: $lato;
+				color: $violet;
+				font-size: 105px;
+				position: absolute;
+				right: -80px;
+				top: -80px;
+			}
 		}
 
 		&:after {
-			content: '+';
-			font-family: $lato;
-			color: $violet;
-			font-size: 127px;
-			position: absolute;
-			right: -122px;
-			top: -59%;
+			@media #{$small} {
+				content: '+';
+				font-family: $lato;
+				color: $violet;
+				font-size: 127px;
+				position: absolute;
+				right: -122px;
+				top: -59%;
+			}
 		}
 	}
 	.header {
-		width: 30%;
+		width: 100%;
 		float: left;
+
+		@media #{$small} {
+			 width: 30%;
+		}
 
 		h2 {
 			span {
@@ -52,28 +68,51 @@ section.about {
 			position: relative;
 
 			&:after {
+				@media #{$xsmall} {
 				content: "";
 					background: url(../i/shapes_about/frame.png) no-repeat;
 				    display: block;
 				    width: 310px;
 				    height: 363px;
 				    position: absolute;
-			        top: -227px;
+			        top: -96px;
 			        left: -40px;
-			        z-index: 100;
+			        z-index: -1;
+			        opacity: 0.5;
+			    }
+
+		        @media #{$small} {
+		        	 top: -227px;
+		        	 opacity: 1;
+		        	 z-index: 100;
+		        }
 			}
 		}
 	}
 
 	.copy-section {
-		width: 70%;
+		width: 100%;
 		float: left;
 		position: relative;
+		margin-top: 30px;
+
+		@media #{$small} {
+			width: 70%;
+			margin-top: 0;
+		}
 
 		.inner-wrapper-copy {
-			position: absolute;
 			z-index: 100;
-			left: -60px;
+			left: 0;
+
+			@media #{$small} {
+				position: absolute;
+				left: 20px;
+			}
+
+			@media #{$medium} {
+				left: 0;
+			}
 		}
 
 		.text-link {

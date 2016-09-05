@@ -38,17 +38,28 @@
 	}
 
 	.speaker-wrapper {
-		margin: 40px 70px;
+		margin: 20px 20px;
+
+		@media #{$medium} {
+			margin: 40px 70px;
+		}
+
 		.speaker {
-			margin-bottom: 150px;
+			margin-bottom: 100px;
+
+			@media #{$small} {
+				margin-bottom: 150px;
+			}
 
 		&:nth-child(odd) {
 			.image-container {
 				box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
 				-webkit-box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
 				-moz-box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
-				float: left;
-
+				
+					@media #{$small} {
+						float: left;
+					}
 				}
 
 				h6 {
@@ -56,7 +67,9 @@
 				}
 
 				.quote-container {
-					float: left;
+					@media #{$small} {
+						float: left;
+					}
 
 					.speaker-info {
 						left: -30px;
@@ -88,7 +101,10 @@
 					box-shadow: 38px -38px 0px 2px rgba(110,13,216,1);
 					-webkit-box-shadow: 38px -38px 0px 2px rgba(110,13,216,1);
 					-moz-box-shadow: 38px -38px 0px 2px rgba(110,13,216,1);
-					float: right;
+
+					@media #{$small} {
+						float: right;
+					}
 				}
 
 				h6 {
@@ -96,10 +112,9 @@
 				}
 
 				.quote-container {
-					float: right;
-					blockquote {
-						float: right;
-					}
+					@media #{$small} {
+						float: left;
+					}		
 
 				.speaker-info {
 					clear: both;
@@ -128,8 +143,13 @@
 		// END: even styles
 
 			.image-container {
+				width: 100%;
 				position: relative;
-				width: 50%;
+
+				@media #{$small} {
+					width: 50%;
+				}
+
 				img {
 					width: 100%;
 				}
@@ -182,10 +202,25 @@
 			}
 
 			.quote-container {
-				width: 50%;
+				width: 100%;
+
+				@media #{$small} {
+					width: 50%;
+				}
 
 				blockquote {
+					padding: 20px 0;
+					max-width: 100%;
+					margin: 0 auto;
 
+					@media #{$xsmall} {
+						max-width: 100%;
+					}
+
+					@media #{$small} {
+						max-width: 260px;
+					}
+				
 					&:before {
 						content: " ";
 						background: url('../i/quote.png');
@@ -199,7 +234,14 @@
 
 				.speaker-info {
 					position: relative;
-					padding-top: 25px;
+
+					@media #{$small} {
+						padding-top: 25px;
+					}
+
+					@media #{$medium} {
+						padding-top: 50px;
+					}
 
 					p {
 						margin-top: 5px;

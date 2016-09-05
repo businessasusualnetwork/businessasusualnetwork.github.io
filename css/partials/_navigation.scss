@@ -1,4 +1,7 @@
 .navigation-container {
+		  -webkit-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+	  -moz-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+	  box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
 	  background: $white;
 	  display: block;
 	  width: 100%;
@@ -46,6 +49,7 @@
 	  width: 100%;
 	  position: fixed;
 	  z-index: 101;
+	  top: -1px;
 	}
 
 	.nav-overlay {
@@ -151,6 +155,7 @@
 			float: left;
 			width: 90%;
 			position: static;
+			display: block;
 		}
 
 		ul {
@@ -212,7 +217,6 @@
 						@media #{$medium} { 
 							opacity: 1;
 							color: $violet;
-
 							&:after {
 								transform: scaleX(1);
 							}

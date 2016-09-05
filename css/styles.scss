@@ -33,12 +33,20 @@ $violet-hover: #960CA3;
 $black-hover: #616161;
 
 // mqs 
+$xsmall:"(min-width: 321px)";
 $small:"(min-width: 768px)";
 $medium: "(min-width: 1024px)";
 
 // helpers
 .hide {
 	display: none;
+}
+
+.hide-medium-down {
+	display: block;
+	@media #{$medium} {
+		display: none;
+	}
 }
 
 
@@ -232,6 +240,7 @@ a.small-link {
 	color: $black;
 	font-size: 12px;
 	border-bottom: 1px solid $black;
+	line-height: 2;
 
 	&:hover,
 	&:active {
@@ -304,8 +313,12 @@ body {
 	overflow-x: hidden;
 
 	section {
-		padding: 100px 20px;
+		padding: 60px 20px;
 		clear: both;
+
+		@media #{$small} {
+			padding: 100px 20px;
+		}
 	}
 
 	.outer-wrapper {
@@ -314,8 +327,12 @@ body {
 
 	.inner-wrapper {
 		max-width: 905px;
-		width: 70%;
+		width: 80%;
 		margin: 0 auto;
+
+		@media #{$small} {
+			width: 70%;
+		}
 	}
 
 	.inner-wrapper-wide {
@@ -325,9 +342,8 @@ body {
 	}
 
 	.hero {
-		padding: 100px 40px 130px 40px;
-		height: 100vh;
-		min-height: 570px;
+		padding: 100px 10px 130px;
+		min-height: 700px;
 		background-image: url('../i/hero-gradient.png');
 		// fallback image
 
@@ -341,6 +357,11 @@ body {
 		background: linear-gradient(to bottom right, #2E21A5, #000000);
 		// diagonal gradient
 
+		@media #{$medium} {
+			min-height: 570px;
+			padding: 100px 40px 130px 40px;
+		}
+		        
 		.half.left {
 			position: relative;
 
@@ -367,8 +388,12 @@ body {
 
 		.title {
 			line-height: 87px;
-			max-width: 387px;
+			width: 296px;
 			position: relative;
+
+			@media #{$small} {
+				width: 387px;
+			}
 
 			&:before {
 				content: '+';
@@ -414,20 +439,22 @@ body {
 				}
 
 				&:after{
-					content: ' ';
-					display: inline-block;
-					width: 100%;
-					height: 4px;
-					position: absolute;	
-					height: 29px;
-					width: 29px;
-					bottom: 5px;
-					border: 1px solid $violet;
-					border-radius: 50%;
-					border-radius: 50%;
-					left: 183px;
-					bottom: 24px;
-					text-shadow: rgba(0,0,0,.01) 0 0 1px;
+					@media #{$small} {
+						content: ' ';
+						display: inline-block;
+						width: 100%;
+						height: 4px;
+						position: absolute;	
+						height: 29px;
+						width: 29px;
+						bottom: 5px;
+						border: 1px solid $violet;
+						border-radius: 50%;
+						border-radius: 50%;
+						left: 183px;
+						bottom: 24px;
+						text-shadow: rgba(0,0,0,.01) 0 0 1px;
+					}
 				}
 			}
 
