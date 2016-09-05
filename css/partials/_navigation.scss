@@ -201,7 +201,6 @@
 					@media #{$medium} { 
 					font-size: 17px;
 					color: $grey;
-					margin: 0 25px;
 					border-bottom: 1px solid transparent;
 					padding: 0 0 5px 0;
 					display: inline;
@@ -217,6 +216,10 @@
 						@media #{$medium} { 
 							opacity: 1;
 							color: $violet;
+<<<<<<< HEAD
+=======
+
+>>>>>>> homepage skinning
 							&:after {
 								transform: scaleX(1);
 							}
