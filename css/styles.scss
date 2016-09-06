@@ -64,6 +64,7 @@ $grey: #6B6B6B;
 
 .teal {
 	color: $teal;
+	text-decoration: none;
 }
 
 .white {
@@ -147,6 +148,10 @@ body {
 			h5 {
 				font-size: 23px;
 			}
+		}
+		.registrationLink{
+			text-decoration: none;
+			text-underline:none;
 		}
 
 		.event-info {
