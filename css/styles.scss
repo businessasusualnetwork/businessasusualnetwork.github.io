@@ -9,6 +9,7 @@
 // typography 
 
 $muli: 'Muli', sans-serif;
+$lato: 'Lato', sans-serif;
 $light: 300;
 $reg: 400;
 
@@ -47,6 +48,11 @@ h4 {
 	font-weight: $light;
 }
 
+.text-center{
+	display: block;
+	text-align: center;
+}
+
 // colors
 $violet: #A30DB8; 
 $indigo: #2C209D;
@@ -60,6 +66,10 @@ $grey: #6B6B6B;
 
 .violet {
 	color: $violet;
+}
+
+.indigo {
+	color: $indigo;
 }
 
 .teal {
@@ -97,7 +107,7 @@ $grey: #6B6B6B;
 
 .btn--secondary {
 	border: 1px solid white;
-	padding: 10px;
+	padding: 7px;
 	border-radius: 30px;
 	text-align: center;
 	font-size: 14px;
@@ -114,12 +124,18 @@ $grey: #6B6B6B;
 body,
 html {
 	max-width: 100%;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 
 body {
 	font-family: $muli;
 	color: $grey;
-	overflow: hidden;
+	overflow-x: hidden;
+
+	.outer-wrapper {
+		overflow-x: hidden;
+	}
 
 	.inner-wrapper {
 		max-width: 905px;
@@ -127,26 +143,184 @@ body {
 	}
 
 	.hero {
-		padding: 70px 0 130px 0;
+		padding: 100px 40px 130px 40px;
 		min-height: 570px;
+		height: 100vh;
 		background-image: url('../i/hero-gradient.png');
-		background-size: contain;
+		// fallback image
+
+
+		background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
+		background: linear-gradient(to right, #2E21A5 , #000000);
+		// linear gradient
+
+		background: -webkit-linear-gradient(left top, #2E21A5, #000000);
+		background: -o-linear-gradient(bottom right, #2E21A5, #000000);
+		background: -moz-linear-gradient(bottom right, #2E21A5, #000000);
+		background: linear-gradient(to bottom right, #2E21A5, #000000);
+		// diagonal gradient
+		        
+		
+
+		.half.left {
+			position: relative;
+
+			&:before {
+				content: '+';
+				font-family: $lato;
+				color: $violet;
+				font-size: 45px;
+				position: absolute;
+				bottom: -64px;
+			}
+
+			&:after {
+				content:' ';
+				height: 5px;
+				background-color: #8830E8;
+				width: 21px;
+				left: 134px;
+				bottom: -20px;
+				display: inline-block;
+				position: absolute;
+			}
+		}
 
 		.title {
 			line-height: 87px;
 			max-width: 387px;
+			position: relative;
+
+			&:before {
+				content: '+';
+				font-family: $lato;
+				display: inline-block;
+				width: 100%;
+				height: 4px;
+				position: absolute;	
+				bottom: 5px;
+				color: $violet;
+				left: -66px;
+				top: 50px;
+				opacity: 0.4;
+				font-size: 65px;
+			}
+
+			&:after {
+				content:' ';
+				height: 5px;
+				background-color: #8830E8;
+				width: 21px;
+				left: -37px;
+				bottom: 35px;
+				display: inline-block;
+				position: absolute;
+			}
+
+			h1 {
+				position: static;
+				&:before{
+					content: '+';
+					font-family: $lato;
+					display: inline-block;
+					width: 100%;
+					height: 4px;
+					position: absolute;	
+					bottom: 5px;
+					color: $violet;
+					left: 100%;
+					top: 66px;
+					opacity: 0.4;
+					font-size: 65px;
+				}
+
+				&:after{
+					content: ' ';
+					display: inline-block;
+					width: 100%;
+					height: 4px;
+					position: absolute;	
+					height: 29px;
+					width: 29px;
+					bottom: 5px;
+					border: 1px solid $violet;
+					border-radius: 50%;
+					border-radius: 50%;
+					left: 183px;
+					bottom: 24px;
+					text-shadow: rgba(0,0,0,.01) 0 0 1px;
+				}
+			}
+
 			span {
-				border-bottom: 4px solid $violet;
+				position: relative;
+				&:before{
+					content: ' ';
+					display: inline-block;
+					width: 100%;
+					height: 4px;
+					position: absolute;	
+					bottom: 5px;
+					background: $violet;
+				}
 			}
 		}
 
 		.sub-title {
+			position: relative;
+			&:before {
+					content: ' ';
+					border: 4px solid #8831E9;
+					width: 19px;
+					height: 19px;
+					display: inline-block;
+					position: absolute;
+					border-radius: 50%;
+					z-index: 1;
+					opacity: 4;
+					right: 140px;
+					top: -30px;
+				}
 			h3 {
 				font-size: 16px;
+				position: relative;
+				z-index: 5;
+				font-weight: $light;
+
+				&:before {
+					content: ' ';
+					background-color: #8831E9;
+					width: 34px;
+					height: 34px;
+					display: inline-block;
+					position: absolute;
+					border-radius: 50%;
+					z-index: 1;
+					opacity: 0.4;
+					top: -42px;
+					left: -20px;
+				}
 			}
 
 			h5 {
 				font-size: 23px;
+				position: relative;
+				z-index: 5;
+
+				&:before {
+					content: ' ';
+					border: 4px solid #8831E9;
+					width: 75px;
+					height: 75px;
+					display: inline-block;
+					position: absolute;
+					border-radius: 50%;
+					z-index: 1;
+					opacity: 4;
+					top: -42px;
+					right: 220px;
+					opacity: .3;
+				}
 			}
 		}
 		.registrationLink{
@@ -171,6 +345,7 @@ body {
 				z-index: 1;
 				top: -50px;
 				left: -68px;
+				opacity: 0.4;
 			}
 
 			h3 {
@@ -198,6 +373,53 @@ body {
 			}
 		}
 	}
+}
+
+
+@media (max-width: 768px) {
+
+	.coming-soon-banner {
+		font-size: 12px;
+	}
+
+	.layout {
+		display: block;
+	}
+	  .half {
+		width: 100%;
+
+		&.right {
+			margin-top: 100px;
+		}
+
+		h1 {
+			font-size: 49px;
+			line-height: 65px;
+		}
+	  }
+	  
+	  .hero {
+	  	min-height: 100vh;
+	  	height: auto !important;
+
+	  	.half {
+	  		&.right {
+	  			margin-top: 0;
+	  		}
+	  	}
+
+	  	  .event-info {
+	  	  	min-width: 100%;
+	  	  	float: none;
+	  	  	margin-top: 120px;
+	  	  	margin-bottom: 0;
+
+	  		  	.btn--secondary {
+	  		  		width: 100%;
+	  		  		font-size: 12px;
+	  		  	}
+	  	  }
+	  }
 }
 
 
