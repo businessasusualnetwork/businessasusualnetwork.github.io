@@ -79,6 +79,7 @@ $grey: #6B6B6B;
 
 .teal {
 	color: $teal;
+	text-decoration: none;
 }
 
 .white {
@@ -334,6 +335,10 @@ body {
 					opacity: .3;
 				}
 			}
+		}
+		.registrationLink{
+			text-decoration: none;
+			text-underline:none;
 		}
 
 		.event-info {
