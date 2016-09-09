@@ -7,6 +7,7 @@
 	  padding: 20px;
 	   @include transition(all 0.3s ease-in-out);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	   backface-visibility: hidden;
 
 	@media #{$medium} {
@@ -38,6 +39,9 @@
 		  }
 =======
 >>>>>>> Homepage Skinning -
+=======
+	   backface-visibility: hidden;
+>>>>>>> hompage-skinning
 
 	@media #{$medium} {
 	  padding: 30px;
@@ -46,15 +50,15 @@
 	  width: 100%;
 	  z-index: 101;
 	  top: -1px;
-	  -webkit-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
-	    -moz-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
-	    box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
 	}
 
 	&.fixed {
 		  top: 0;
 		  padding: 10px 20px;
 		  opacity: 1;
+		  -webkit-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+		    -moz-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+		    box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
 
 		  .navigation ul li.last a {
 		  	background: $violet;
