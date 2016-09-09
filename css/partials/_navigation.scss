@@ -1,7 +1,4 @@
 .navigation-container {
-		  -webkit-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
-	  -moz-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
-	  box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
 	  background: $white;
 	  display: block;
 	  width: 100%;
@@ -9,6 +6,7 @@
 	  z-index: 101;
 	  padding: 20px;
 	   @include transition(all 0.3s ease-in-out);
+<<<<<<< HEAD
 	   backface-visibility: hidden;
 
 	@media #{$medium} {
@@ -38,18 +36,36 @@
 		  		color: $violet;
 		  	}
 		  }
+=======
+>>>>>>> Homepage Skinning -
 
 	@media #{$medium} {
 	  padding: 30px;
-	  -webkit-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
-	  -moz-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
-	  box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
 	  background: $white;
 	  display: block;
 	  width: 100%;
-	  position: fixed;
 	  z-index: 101;
 	  top: -1px;
+	  -webkit-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+	    -moz-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+	    box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+	}
+
+	&.fixed {
+		  top: 0;
+		  padding: 10px 20px;
+		  opacity: 1;
+
+		  .navigation ul li.last a {
+		  	background: $violet;
+		  	color: $white;
+
+		  	&:hover,
+		  	&:active {
+		  		background: $white;
+		  		color: $violet;
+		  	}
+		  }
 	}
 
 	.nav-overlay {
