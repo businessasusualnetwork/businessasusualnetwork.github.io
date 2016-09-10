@@ -1,0 +1,77 @@
+section.location {
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
+
+	.header {
+		    margin-bottom: 100px;
+		h2,
+		h3 {
+			float: left;
+			display: inline-block;
+		}
+
+		h3 {
+			padding-left: 20px;
+			padding-top: 17px;
+		}
+	}
+
+	.map-box-container {
+		clear: both;
+	}
+
+	.map-marker {
+		display: block;
+		width: 102px;
+		height: 102px;
+		border-radius: 50%;
+			background: rgba(80,0,232,1);
+		background: -moz-linear-gradient(left, rgba(80,0,232,1) 0%, rgba(170,14,180,1) 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, rgba(80,0,232,1)), color-stop(100%, rgba(170,14,180,1)));
+		background: -webkit-linear-gradient(left, rgba(80,0,232,1) 0%, rgba(170,14,180,1) 100%);
+		background: -o-linear-gradient(left, rgba(80,0,232,1) 0%, rgba(170,14,180,1) 100%);
+		background: -ms-linear-gradient(left, rgba(80,0,232,1) 0%, rgba(170,14,180,1) 100%);
+		background: linear-gradient(to right, rgba(80,0,232,1) 0%, rgba(170,14,180,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5000e8', endColorstr='#aa0eb4', GradientType=1 );
+		margin: auto;
+		 position: absolute;
+		 top: 0; left: -174px; bottom: 0; right: 0;
+
+		img {
+			margin: auto;
+			 position: absolute;
+			 top: 0; left: 0; bottom: 0; right: 0;
+		}
+	}
+
+	.map-img {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.address-container {
+		text-align: center;
+		h3 {
+			margin-top: 60px;
+			padding-bottom: 5px;
+			display: inline-block;
+
+			&:before {
+				content: ' ';
+				background: url('../i/small-marker.png');
+				display: inline-block;
+				width: 10px;
+				height: 15px;
+				background-repeat: no-repeat;
+				padding-left: 20px;
+			}
+		}
+
+		a {
+			margin-top: 10px;
+		}
+	}
+}

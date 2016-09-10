@@ -7,6 +7,7 @@
 	  padding: 20px;
 	   @include transition(all 0.3s ease-in-out);
 	   backface-visibility: hidden;
+	   margin-top: -1px;
 
 	@media #{$medium} {
 	  padding: 30px;
@@ -51,9 +52,6 @@
 	    background-image: url('../i/hero-gradient.png');
 	    // fallback image
 
-	    // remove when JS is implemented
-	    display: none;
-
 	    background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
 	    background: linear-gradient(to right, #2E21A5 , #000000);
 	    // linear gradient
@@ -82,9 +80,6 @@
 		transform: rotate(45deg);
 		@include transition(all 0.3s ease-in-out);
 		z-index: 9000;
-
-		// remove when JS is implemented
-		display: none;
 
 		&:hover,
 		&:active {
@@ -132,9 +127,6 @@
 		width: 100%;
 		left: 0;
 
-		// remove when JS is implemented
-		display: none;
-
 		@media #{$medium} {
 			float: left;
 			width: 90%;
@@ -143,18 +135,24 @@
 		}
 
 		ul {
-			display: block;
+			display: none;
 			text-align: center;
 			z-index: 400;
 			padding: 0;
 			margin: 0;
 			padding-top: 80px;
 
+			&.show {
+				display: block;
+			}
+
 			@media #{$medium} {
 				float: right;
 				position: static;
 				padding-top: 0;
+				display: inline-block;
 			}
+
 
 			li {
 				list-style: none;

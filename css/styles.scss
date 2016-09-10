@@ -19,6 +19,9 @@ $indigo: #2C209D;
 $eggplant: #8830E8;
 $lavender: #DFC0EA;
 $teal: #2CBACC;
+$royal-blue: #5300E5;
+$lViolet: #F3EFFA;
+$blue-black: #02001B;
 
 $white: #ffffff;
 $black: #000000;
@@ -47,6 +50,28 @@ $medium: "(min-width: 1024px)";
 	}
 }
 
+.show-medium-up {
+	display: none;
+	@media #{$medium} {
+		display: block;
+	}
+}
+
+
+.hide-small-down {
+	display: block;
+	@media #{$small} {
+		display: none;
+	}
+}
+
+.show-small-up {
+	display: none;
+	@media #{$small} {
+		display: block;
+	}
+}
+
 
 .violet {
 	color: $violet;
@@ -66,6 +91,10 @@ $medium: "(min-width: 1024px)";
 
 .teal {
 	color: $teal;
+}
+
+.royal-blue {
+	color: $royal-blue;
 }
 
 .white {
@@ -97,6 +126,10 @@ h1 {
 	text-transform: uppercase;
 	letter-spacing: 3.5px;
 	font-weight: $reg;
+
+	&.white {
+		color: $white;
+	}
 }
 
 h3 {
@@ -126,6 +159,11 @@ h4 {
 	text-align: center;
 }
 
+.text-right {
+	display: block;
+	text-align: right;
+}
+
 .upcase {
 	text-transform: uppercase;
 }
@@ -147,6 +185,11 @@ h4 {
 	.align-bottom {
 		align-self: flex-end;
 	}
+}
+
+.half {
+	width: 50%;
+	float: left;
 }
 
 .ul-white {
@@ -271,6 +314,10 @@ body {
 	font-family: $muli;
 	color: $grey;
 	overflow-x: hidden;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
 
 	section {
 		padding: 60px 20px;
@@ -599,3 +646,7 @@ body {
 @import "partials/navigation";
 @import "partials/about";
 @import "partials/speakers";
+@import "partials/sponsors";
+@import "partials/location";
+@import "partials/newsletter";
+@import "partials/footer";

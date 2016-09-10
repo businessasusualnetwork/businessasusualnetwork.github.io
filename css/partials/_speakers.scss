@@ -51,6 +51,10 @@
 				margin-bottom: 150px;
 			}
 
+			&:last-child {
+				margin-bottom: 0;
+			}
+
 		&:nth-child(odd) {
 			.image-container {
 				box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
@@ -84,11 +88,11 @@
 			.social-media {
 					a {
 						&.twitter {
-							left: 97%;
+							left: 98%;
 						}
 
-						&.instagram {
-							left: 97%;
+						&.linkedIn {
+							left: 98%;
 						}
 					}
 				}
@@ -130,11 +134,11 @@
 		.social-media {
 				a {
 					&.twitter {
-						right: 97%;
+						right: 98%;
 					}
 
-					&.instagram {
-						right: 97%;
+					&.linkedIn {
+						right: 98%;
 					}
 				}
 			}
@@ -189,11 +193,11 @@
 							}
 						}
 
-						&.instagram {
+						&.linkedIn {
 							top: 65px;
 
 							&:after {
-								background: url('../i/soc-instagram.png');
+								background: url('../i/soc-linkedin.png');
 								width: 18px;
 							}
 						}
