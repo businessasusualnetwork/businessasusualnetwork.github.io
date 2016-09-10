@@ -13,8 +13,6 @@ $lato: 'Lato', sans-serif;
 $light: 300;
 $reg: 400;
 
-a{
-	text-decoration: none;
 // colors
 $violet: #A30DB8; 
 $indigo: #2C209D;
@@ -128,28 +126,6 @@ h4 {
 	text-align: center;
 }
 
-// colors
-$violet: #A30DB8; 
-$indigo: #2C209D;
-$teal: #2CBACC;
-
-
-$white: #ffffff;
-$black: #000000;
-$vulcan: #17161B;
-$grey: #6B6B6B;
-
-.violet {
-	color: $violet;
-}
-
-.indigo {
-	color: $indigo;
-}
-
-.teal {
-	color: $teal;
-	text-decoration: none;
 .upcase {
 	text-transform: uppercase;
 }
@@ -252,25 +228,9 @@ a.small-link {
 // buttons
 
 .btn--secondary {
-	padding: 5px;
-	border-radius: 30px;
-	text-align: center;
-	font-size: 14px;
-	font-weight: 300;
-	max-width: 168px;
-	background: $white;
-	color: $violet;
-	font-weight: $light;
-	margin-top: 0;
-	display: block;
-	position: relative;
-	top: 30px;
-	font-style: italic;
-	display: block;
 	border-radius: 30px;
 	background: $white;
 	border: none;
-
 	@include transition(all 0.3s ease-in-out);
 	a {	
 		padding: 5px;
@@ -363,6 +323,7 @@ body {
 			padding: 100px 40px 130px 40px;
 		}
 		        
+
 		.half.left {
 			position: relative;
 
@@ -530,10 +491,6 @@ body {
 				}
 			}
 		}
-		.registrationLink{
-			text-decoration: none;
-			text-underline:none;
-		}
 
 		.event-info {
 			position: relative;
@@ -612,27 +569,33 @@ body {
 		}
 	  }
 	  
-		  .hero {
+	  .hero {
 
-			  	.half {
-			  		&.right {
-			  			margin-top: 0;
-			  		}
-			  	}
+	  	.half {
+	  		&.right {
+	  			margin-top: 0;
+	  		}
+	  	}
 
-			  	  .event-info {
-			  	  	min-width: 100%;
-			  	  	float: none;
-			  	  	margin-top: 120px;
-			  	  	margin-bottom: 0;
+	  	  .event-info {
+	  	  	min-width: 100%;
+	  	  	float: none;
+	  	  	margin-top: 120px;
+	  	  	margin-bottom: 0;
 
-			  		  	.btn--secondary {
-			  		  		width: 100%;
-			  		  		font-size: 12px;
-			  		}
-			  	}
-			}
-		}
+	  		  	.btn--secondary {
+	  		  		width: 100%;
+	  		  		font-size: 12px;
+	  		}
+	  	}
 	}
 }
 
+
+
+
+// Partials 
+// -----------------------
+@import "partials/navigation";
+@import "partials/about";
+@import "partials/speakers";
