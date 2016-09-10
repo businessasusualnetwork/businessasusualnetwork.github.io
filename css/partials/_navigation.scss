@@ -6,12 +6,7 @@
 	  z-index: 101;
 	  padding: 20px;
 	   @include transition(all 0.3s ease-in-out);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 	   backface-visibility: hidden;
-=======
->>>>>>> feature/homepage-skinning
 
 	@media #{$medium} {
 	  padding: 30px;
@@ -40,11 +35,7 @@
 		  		color: $violet;
 		  	}
 		  }
-=======
->>>>>>> Homepage Skinning -
-=======
 	   backface-visibility: hidden;
->>>>>>> hompage-skinning
 
 	@media #{$medium} {
 	  padding: 30px;
@@ -239,10 +230,6 @@
 						@media #{$medium} { 
 							opacity: 1;
 							color: $violet;
-<<<<<<< HEAD
-=======
-
->>>>>>> homepage skinning
 							&:after {
 								transform: scaleX(1);
 							}
