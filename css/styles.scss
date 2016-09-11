@@ -10,6 +10,7 @@
 
 $muli: 'Muli', sans-serif;
 $lato: 'Lato', sans-serif;
+$font: FontAwesome;
 $light: 300;
 $reg: 400;
 
@@ -26,7 +27,7 @@ $blue-black: #02001B;
 $white: #ffffff;
 $black: #000000;
 $vulcan: #17161B;
-$grey: #6B6B6B;
+$grey: #4e4e4e;
 
 // color hover
 
@@ -135,6 +136,7 @@ h1 {
 h3 {
 	font-size: 20px;
 	font-weight: $light;
+	letter-spacing: 1.4px;
 }
 
 h4 {
@@ -250,7 +252,6 @@ a.text-link {
 		&:after {
 			content: " ";
 			left: 5px;
-
 		}
 	}
 }
@@ -276,16 +277,17 @@ a.small-link {
 	border: none;
 	@include transition(all 0.3s ease-in-out);
 	a {	
-		padding: 5px;
-		text-align: center;
-		font-size: 14px;
-		font-weight: 300;
-		min-width: 168px;
-		color: $violet;
-		font-weight: $light;
-		font-style: italic;
-		display: block;
-		@include transition(all 0.3s ease-in-out);
+  		font-size: 12px;
+  		float: none;
+  		color: $violet;
+  		font-weight: $light;
+  		font-style: italic;
+  		display: block;
+  		padding: 5px 15px;
+  		text-align: center;
+  		font-size: 14px;
+  		font-weight: 300;
+  		@include transition(all 0.3s ease-in-out);
 	}
 
 	&:hover,
@@ -349,9 +351,8 @@ body {
 	}
 
 	.hero {
-		padding: 130px 10px 130px;
+		padding: 190px 10px 130px 10px;
 		min-height: 700px;
-		margin-top: 60px;
 		background-image: url('../i/hero-gradient.png');
 		// fallback image
 
@@ -584,9 +585,15 @@ body {
 			}
 
 			button {
-				float: right;
 				position: relative;
-				top: 30px;
+				top: 20px;
+				margin: 0 auto;
+				display: block;
+
+				@media #{$medium} {
+					min-width: 168px;
+					top: 30px;
+				}
 
 			}
 		}
@@ -629,11 +636,6 @@ body {
 	  	  	float: none;
 	  	  	margin-top: 120px;
 	  	  	margin-bottom: 0;
-
-	  		  	.btn--secondary {
-	  		  		width: 100%;
-	  		  		font-size: 12px;
-	  		}
 	  	}
 	}
 }

@@ -172,7 +172,9 @@
 
 						&:hover,
 						&:active {
-							opacity: 0.5;
+							&:after {
+								color: $grey;
+							}
 						}
 
 
@@ -181,15 +183,17 @@
 							height: 18px;
 							display: block;
 							color: $black;
-							background-repeat: no-repeat; 
+							background-repeat: no-repeat;
+							font-family: $font;
+							@include transition(all 0.3s ease-in-out);
 						}
 
 						&.twitter {
 							top: 13px;
 
 							&:after {
-								background: url('../i/soc-twitter.png');
-								width: 24px;
+								content:"\f099";
+								font-size: 24px;
 							}
 						}
 
@@ -197,8 +201,8 @@
 							top: 65px;
 
 							&:after {
-								background: url('../i/soc-linkedin.png');
-								width: 18px;
+								content:"\f08c";
+								font-size: 24px;
 							}
 						}
 					}

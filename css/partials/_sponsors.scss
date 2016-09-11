@@ -2,6 +2,65 @@ section.sponsors {
 	padding: 0;
 	width: 100%;
 	min-height: 150px;
+	position: relative;
+
+	&:after {
+		background: none;
+		@media #{$medium} {
+			content: "";
+			background: url('../i/shapes_sponsors/triangle.png');
+			display: inline-block;
+			width: 88px;
+			height: 88px;
+			position: absolute;
+			left: 20px;
+			bottom: -41px;
+			background-repeat: no-repeat;
+			display: none;
+			// temp
+		}
+	}
+
+	.outer-wrapper {
+		overflow: visible;
+	}
+
+	.sponsors-preheading {
+		.inner-wrapper-wide {
+			position: relative;
+
+			h3 {
+				&:before {
+					content:"";
+					@media #{$medium} {
+						content: '+';
+						font-family: $lato;
+						font-weight: 400;
+						color: #A30DB8;
+						font-size: 80px;
+						position: absolute;
+						right: 50px;
+						top: -77px;
+					}
+				}
+
+				&:after {
+					background: none;
+					@media #{$medium} {
+						content: "";
+						background: url('../i/shapes_sponsors/oval.png');
+						display: inline-block;
+						width: 88px;
+						height: 88px;
+						position: absolute;
+						right: 0;
+						top: 0;
+						background-repeat: no-repeat;
+					}
+				}
+			}		
+		}
+	}
 
 	.sponsors-list-container {
 			background: rgba(80,0,232,1);
@@ -16,17 +75,15 @@ section.sponsors {
 		.section-header {
 			margin-top: 10px;
 			padding-top: 10px;
+			text-transform: capitalize;
 		}
 
 		.sponsors-list-container-inner {
-			padding-top: 20px;
+			padding-bottom: 20px;
+
 			.inner-wrapper {
 				text-align: center;
 				padding: 0;
-
-				@media #{$small} {
-					padding: 0 0 50px;
-				}
 
 				.sponsor {
 					opacity: 0.5;

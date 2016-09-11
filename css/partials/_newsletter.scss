@@ -2,6 +2,39 @@ section.newsletter-section {
 	background: $lViolet;
 	padding: 60px 0;
 
+	.half.copy {
+		position: relative;
+		&:before {
+	    	content:"";
+	    	background: url('../i/shapes_newsletter/oval.png');
+	    	font-size: 80px;
+	    	position: absolute;
+	    	background-repeat: no-repeat;
+		    width: 163px;
+		    height: 163px;
+    	    top: -100px;
+    	    left: -80px;
+		}
+
+		&:after {
+			content: '+';
+			font-family: $lato;
+			font-weight: 400;
+			color: $royal-blue;
+			font-style: normal;
+			font-size: 80px;
+			position: absolute;
+			left: 0;
+			top: -163px;
+			z-index: 9;
+			opacity: 0.4;
+
+			@media #{$small} {
+				opacity: 1;
+			}
+		}
+	}
+
 	p {
 		margin: 5px 0 0 0;
 		font-size: 14px;
