@@ -27,7 +27,7 @@ $blue-black: #02001B;
 $white: #ffffff;
 $black: #000000;
 $vulcan: #17161B;
-$grey: #4e4e4e;
+$grey: #525252;
 
 // color hover
 
@@ -36,6 +36,7 @@ $black-hover: #616161;
 
 // mqs 
 $xsmall:"(min-width: 321px)";
+$small-landscape:"(min-width: 400px)";
 $small:"(min-width: 768px)";
 $medium: "(min-width: 1024px)";
 
@@ -171,6 +172,12 @@ h4 {
 }
 .small-copy {
 	font-size: 12px;
+}
+
+.italic-small {
+	font-size: 14px;
+	font-style: italic;
+
 }
 
 // layout 
@@ -351,7 +358,7 @@ body {
 	}
 
 	.hero {
-		padding: 190px 10px 130px 10px;
+		padding: 170px 10px 130px 10px;
 		min-height: 700px;
 		background-image: url('../i/hero-gradient.png');
 		// fallback image
@@ -368,7 +375,7 @@ body {
 
 		@media #{$medium} {
 			min-height: 570px;
-			padding: 100px 40px 130px 40px;
+			padding: 190px 40px 130px 40px;
 		}
 		        
 
@@ -587,7 +594,6 @@ body {
 			button {
 				position: relative;
 				top: 20px;
-				margin: 0 auto;
 				display: block;
 
 				@media #{$medium} {

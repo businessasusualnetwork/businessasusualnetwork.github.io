@@ -65,7 +65,7 @@ section.location {
 		h2,
 		h3 {
 			float: left;
-			display: inline-block;
+			display: block;
 		}
 
 		h2 {
@@ -86,8 +86,13 @@ section.location {
 		}
 
 		h3 {
-			padding-left: 20px;
-			padding-top: 17px;
+			padding-top: 0;
+			padding-left: 120px;
+
+			@media #{$small-landscape} {
+				padding-left: 20px;
+				padding-top: 17px;
+			}
 		}
 	}
 
@@ -117,7 +122,11 @@ section.location {
 				width: 10px;
 				height: 15px;
 				background-repeat: no-repeat;
-				padding-left: 4%;
+				padding-left: 10px;
+
+				@media #{$small} {
+					padding-left: 20px;
+				}
 			}
 		}
 

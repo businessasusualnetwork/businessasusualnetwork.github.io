@@ -72,6 +72,14 @@ section.sponsors {
 		background: linear-gradient(to right, rgba(80,0,232,1) 0%, rgba(170,14,180,1) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5000e8', endColorstr='#aa0eb4', GradientType=1 );
 
+		.inner-wrapper {
+			width: 100%;
+
+			@media #{$medium} {
+				width: 80%;
+			}
+		}
+
 		.section-header {
 			margin-top: 10px;
 			padding-top: 10px;
@@ -79,26 +87,24 @@ section.sponsors {
 		}
 
 		.sponsors-list-container-inner {
-			padding-bottom: 20px;
 
 			.inner-wrapper {
 				text-align: center;
-				padding: 0;
+
+				@media #{$small} {
+					padding-bottom: 30px;
+				}
 
 				.sponsor {
 					opacity: 0.5;
 					@include transition(all 0.3s ease-in-out);
 
 					&.half {
-						width: 100%;
-
-						@media #{$small} {
-							width: 50%;
-						}
+						width: 50%;
 					}
 
 					img {
-						width: 40%;
+						width: 80%;
 
 						&:first-child {
 							margin-bottom: 35px;
@@ -117,7 +123,12 @@ section.sponsors {
 					}
 
 					&.sponsor01 {
-						padding-top: 20px;
+						padding-top: 16px;
+
+						@media #{$small} {
+							padding-top: 25px;
+
+						}
 					}
 
 					&:hover,
