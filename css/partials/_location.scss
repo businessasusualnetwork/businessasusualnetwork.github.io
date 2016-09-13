@@ -1,0 +1,137 @@
+section.location {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 100px;
+	position: relative;
+	margin-top: 50px;
+
+	.inner-wrapper-wide {
+		position: relative;
+
+		&:before {
+			content: "";
+
+			@media #{$small} {
+				content: '+';
+				opacity: 1;
+				font-family: $lato;
+				font-weight: 400;
+				color: $royal-blue;
+				font-style: normal;
+				font-size: 134px;
+				position: absolute;
+				right: 0;
+				top: 20px;
+				z-index: 9;
+			}
+		}
+
+		&:after {
+			background: none;
+				@media #{$small} {
+		    	content:"";
+		    	background: url('../i/shapes_location/plus.png');
+		    	font-size: 80px;
+		    	position: absolute;
+		    	background-repeat: no-repeat;
+			    width: 82px;
+			    height: 82px;
+			    top: 131px;
+			    z-index: 9;
+			    right: -71px;
+			}
+		}
+	}
+
+	.header {
+		    margin-bottom: 50px;
+		    position: relative;
+
+		    @media #{$small} {
+		    	margin-bottom: 100px;
+		    }
+
+		    &:before {
+		    	content:"";
+		    	background: url('../i/shapes_location/triangle.png');
+		    	font-size: 80px;
+		    	position: absolute;
+		    	background-repeat: no-repeat;
+	    	    width: 163px;
+	    	    height: 163px;
+	    	    top: -72px;
+	    	    left: -50px;
+		    }
+		h2,
+		h3 {
+			float: left;
+			display: block;
+		}
+
+		h2 {
+			position: relative;
+
+			span {
+				&:after {
+					content: " ";
+				    height: 5px;
+				    width: 97px;
+				    display: inline-block;
+				    background: $violet;
+				    position: absolute;
+				    bottom: 2px;
+				    left: 0;
+				}
+			}
+		}
+
+		h3 {
+			padding-top: 0;
+			padding-left: 120px;
+
+			@media #{$small-landscape} {
+				padding-left: 20px;
+				padding-top: 17px;
+			}
+		}
+	}
+
+	.map-box-container {
+		clear: both;
+	}
+
+	.map-img {
+		position: relative;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.address-container {
+		text-align: center;
+		h3 {
+			margin-top: 60px;
+			padding-bottom: 5px;
+			display: inline-block;
+
+			&:before {
+				content: ' ';
+				background: url('../i/small-marker.png');
+				display: inline-block;
+				width: 10px;
+				height: 15px;
+				background-repeat: no-repeat;
+				padding-left: 10px;
+
+				@media #{$small} {
+					padding-left: 20px;
+				}
+			}
+		}
+
+		a {
+			margin-top: 10px;
+		}
+	}
+}

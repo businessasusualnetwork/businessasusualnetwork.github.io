@@ -1,18 +1,37 @@
 
-
-
 $(document).on('ready', function() {  
-  var winHeight = $(window).height(), 
-      docHeight = $(document).height(),
-      progressBar = $('progress'),
-      max, value;
 
-  /* Set the max scrollable area */
-  max = docHeight - winHeight;
-  progressBar.attr('max', max);
+ $(document).on('scroll',function(){
+  var $menu = $('.navigation-container');
 
-  $(document).on('scroll', function(){
-     value = $(window).scrollTop();
-     progressBar.attr('value', value);
+     if ($(document).scrollTop() > 66) {
+     $menu.addClass('fixed')
+     } else {
+    $menu.removeClass('fixed')
+     }
   });
+ // fixed menu
+
+ var $menuTrigger = $('.menu');
+ var $overlay = $('.nav-overlay');
+ var $close = $('a.close');
+ var $nav = $('.navigation-container .navigation ul');
+ var $body = $('body');
+
+ $menuTrigger.on('click touchstart', function(e){
+ 	e.preventDefault();
+ 	$overlay.removeClass('hide');
+ 	$close.removeClass('hide');
+ 	$nav.addClass('show');
+ 	$body.addClass('no-scroll');
+ });
+
+  $close.on('click touchstart', function(e){
+  	e.preventDefault();
+ 	$overlay.addClass('hide');
+ 	$close.addClass('hide');
+ 	$nav.removeClass('show');
+ 	$body.removeClass('no-scroll');
+ });
+
 });

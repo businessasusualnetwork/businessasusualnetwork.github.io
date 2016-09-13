@@ -1,0 +1,257 @@
+.speakers {
+	background: url(../i/hp-about-bkg.png);
+	background-repeat: no-repeat; 
+	.header {
+		margin-bottom: 100px;
+		position: relative;
+
+		&:after{
+			content:" ";
+			background: url(../i/shapes_about/header-circle.png) no-repeat;
+		    display: block;
+		    width: 130px;
+		    height: 160px;
+		    position: absolute;
+		    top: -42px;
+		    left: -40px;
+		    z-index: -1;		
+		}
+
+		span {
+			position: relative;
+			&:after{
+				content: " ";
+				height: 5px;
+				width: 43px;
+				display: inline-block;
+				background: $eggplant;
+				position: absolute;
+				bottom: 2px;
+				left: 0;
+			}
+		}
+
+		h3 {
+			padding-top: 15px;
+			padding-left: 55px;
+		}
+	}
+
+	.speaker-wrapper {
+		margin: 20px 20px;
+
+		@media #{$medium} {
+			margin: 40px 70px;
+		}
+
+		.speaker {
+			margin-bottom: 100px;
+
+			@media #{$small} {
+				margin-bottom: 150px;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+		&:nth-child(odd) {
+			.image-container {
+				box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
+				-webkit-box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
+				-moz-box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
+				
+					@media #{$small} {
+						float: left;
+					}
+				}
+
+				h6 {
+					left: 0;
+				}
+
+				.quote-container {
+					@media #{$small} {
+						float: left;
+					}
+
+					.speaker-info {
+						left: -30px;
+						clear: both;
+
+						h4 {
+							color: $indigo;
+						}
+					}
+				}
+
+			.social-media {
+					a {
+						&.twitter {
+							left: 98%;
+						}
+
+						&.linkedIn {
+							left: 98%;
+						}
+					}
+				}
+			}
+
+			// END: odd styles
+
+			&:nth-child(even) {
+				.image-container {
+					box-shadow: 38px -38px 0px 2px rgba(110,13,216,1);
+					-webkit-box-shadow: 38px -38px 0px 2px rgba(110,13,216,1);
+					-moz-box-shadow: 38px -38px 0px 2px rgba(110,13,216,1);
+
+					@media #{$small} {
+						float: right;
+					}
+				}
+
+				h6 {
+					right: 0;
+				}
+
+				.quote-container {
+					@media #{$small} {
+						float: left;
+					}		
+
+				.speaker-info {
+					clear: both;
+					right: -30px;
+					text-align: right;
+
+						h4 {
+							color: $violet;
+						}
+				}
+			}
+
+		.social-media {
+				a {
+					&.twitter {
+						right: 98%;
+					}
+
+					&.linkedIn {
+						right: 98%;
+					}
+				}
+			}
+		}
+
+		// END: even styles
+
+			.image-container {
+				width: 100%;
+				position: relative;
+
+				@media #{$small} {
+					width: 50%;
+				}
+
+				img {
+					width: 100%;
+				}
+
+				h6 {
+					position: absolute;
+					top: -28px;
+					font-size: 14px;
+				}
+
+				.social-media {
+					position: static;
+					a {
+						font-size: 0;
+						position: absolute;
+
+						&:hover,
+						&:active {
+							&:after {
+								color: $grey;
+							}
+						}
+
+
+						&:after {
+							content: " ";
+							height: 18px;
+							display: block;
+							color: $black;
+							background-repeat: no-repeat;
+							font-family: $font;
+							@include transition(all 0.3s ease-in-out);
+						}
+
+						&.twitter {
+							top: 13px;
+
+							&:after {
+								content:"\f099";
+								font-size: 24px;
+							}
+						}
+
+						&.linkedIn {
+							top: 65px;
+
+							&:after {
+								content:"\f08c";
+								font-size: 24px;
+							}
+						}
+					}
+				}
+			}
+
+			.quote-container {
+				width: 100%;
+
+				@media #{$small} {
+					width: 50%;
+				}
+
+				blockquote {
+					padding: 20px 0;
+					max-width: 100%;
+					margin: 0 auto;
+
+					@media #{$xsmall} {
+						max-width: 100%;
+					}
+
+					@media #{$small} {
+						max-width: 260px;
+					}
+				
+					&:before {
+						content: " ";
+						background: url('../i/quote.png');
+						display: block;
+						height: 20px;
+						width: 20px;
+						background-repeat: no-repeat;
+						margin: 0 auto;
+					}
+				}
+
+				.speaker-info {
+					position: relative;
+
+					@media #{$small} {
+						padding-top: 25px;
+					}
+
+					p {
+						margin-top: 5px;
+					}
+				}
+			}
+		}
+	}
+}

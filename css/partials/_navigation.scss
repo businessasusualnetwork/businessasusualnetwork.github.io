@@ -1,0 +1,254 @@
+.navigation-container {
+	  background: $white;
+	  display: block;
+	  position: fixed;
+	  z-index: 101;
+	  padding: 20px;
+	   @include transition(all 0.3s ease-in-out);
+	   backface-visibility: hidden;
+	   margin-top: -1px;
+	   width: 100%;
+
+	@media #{$medium} {
+	  padding: 30px;
+	  background: $white;
+	  display: block;
+	  width: 100%;
+	  z-index: 101;
+	  top: -1px;
+	}
+
+	&.fixed {
+		  top: 0;
+		  padding: 10px 20px;
+		  opacity: 1;
+		  -webkit-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+		    -moz-box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+		    box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
+
+		  .navigation ul li.last a {
+		  	background: $violet;
+		  	color: $white;
+
+		  	&:hover,
+		  	&:active {
+		  		background: $white;
+		  		color: $violet;
+		  	}
+		  }
+	}
+
+	.nav-overlay {
+		height: 100vh;
+	    width: 0;
+	    position: fixed; 
+	    z-index: 1; 
+	    left: 0;
+	    top: 0;
+	    overflow-x: hidden;
+	    transition: 0.5s;
+	    width:100%;
+	    z-index: 300;
+	    background-image: url('../i/hero-gradient.png');
+	    // fallback image
+
+	    background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
+	    background: linear-gradient(to right, #2E21A5 , #000000);
+	    // linear gradient
+
+	    background: -webkit-linear-gradient(left top, #2E21A5, #000000);
+	    background: -o-linear-gradient(bottom right, #2E21A5, #000000);
+	    background: -moz-linear-gradient(bottom right, #2E21A5, #000000);
+	    background: linear-gradient(to bottom right, #2E21A5, #000000);
+	    // diagonal gradient
+	    opacity: 0.95;
+
+	    @media #{$medium} {
+	    	visibility: hidden;
+	    	position: static;
+	    	height: auto;
+	    	width: 0;
+	    }
+	}
+
+	.close {
+		font-size: 50px;
+		color: $white;
+		position: fixed;
+		right: 20px;
+		top: 20px;
+		transform: rotate(45deg);
+		@include transition(all 0.3s ease-in-out);
+		z-index: 9000;
+
+		&:hover,
+		&:active {
+			opacity: 0.3;
+		}
+	}
+
+	.inner-wrapper.inner-wrapper-wide {
+		visibility: visible;
+	}
+
+	.logo {
+		width: 10%;
+		float: left;
+		h1 {
+			font-size: 18px;
+			color: $violet;
+		}
+	}
+
+	.menu {
+		float: right;
+		font-size: 20px;
+		position: relative;
+		top: -6px;
+		cursor: pointer;
+		@include transition(all 0.3s ease-in-out);
+
+		&:hover,
+		&:active {
+			color: $violet;
+		}
+
+		span.label {
+			font-size: 14px;
+			position: relative;
+			top: -3px;
+		}
+	}
+
+	.navigation {
+		position: fixed;
+		z-index: 900;
+		text-align: center;
+		width: 100%;
+		left: 0;
+
+		@media #{$medium} {
+			float: left;
+			width: 90%;
+			position: static;
+			display: block;
+		}
+
+		ul {
+			display: none;
+			text-align: center;
+			z-index: 400;
+			padding: 0;
+			margin: 0;
+			padding-top: 40px;
+
+				@media #{$small} {
+					padding-top: 80px;
+				}
+
+			&.show {
+				display: block;
+			}
+
+			@media #{$medium} {
+				float: right;
+				position: static;
+				padding-top: 0;
+				display: inline-block;
+			}
+
+
+			li {
+				list-style: none;
+			
+				@media #{$medium} {
+					float: left;
+					display: inline;
+					position: static;
+					margin: 0 25px;
+				}
+
+				a {
+					color: $white;
+					padding: 10px 0;
+					font-size: 50px;
+					display: block;
+
+					&:after {
+						@media #{$medium} { 
+							display: block;
+							content: '';
+							border-bottom: solid 1px $violet;
+							transform: scaleX(0);
+							@include transition(all 0.3s ease-in-out);
+						}
+					}
+
+					@media #{$medium} { 
+					font-size: 17px;
+					color: $grey;
+					border-bottom: 1px solid transparent;
+					padding: 0 0 5px 0;
+					display: inline;
+					}
+
+					&:hover,
+					&:active {
+						color: $white;
+						opacity: 0.3;
+
+						@media #{$medium} { 
+							opacity: 1;
+							color: $violet;
+
+							&:after {
+								transform: scaleX(1);
+							}
+						}
+					}
+				}
+
+				&.last {
+					max-width: 230px;
+					margin: 0 auto;
+					margin-top: 20px;
+
+					@media #{$medium} { 
+						top: -6px;
+						left: 20px;
+						position: relative;
+						width: auto;
+						margin-top: 0;
+
+						}
+
+					a {
+						border: 1px solid $violet;
+						padding: 5px 15px;
+						text-align: center;
+						font-size: 14px;
+						font-weight: 300;
+						min-width: 130px;
+						color: $violet;
+						font-weight: $light;
+						font-style: italic;
+						display: block;
+						@include transition(all 0.3s ease-in-out);
+						border-radius: 30px;
+
+						&:after {
+							border-bottom: none;
+						}
+
+						&:hover,
+						&:active {
+							background: $violet;
+							color: $white;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

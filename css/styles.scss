@@ -10,12 +10,101 @@
 
 $muli: 'Muli', sans-serif;
 $lato: 'Lato', sans-serif;
+$font: FontAwesome;
 $light: 300;
 $reg: 400;
 
+// colors
+$violet: #A30DB8; 
+$indigo: #2C209D;
+$eggplant: #8830E8;
+$lavender: #DFC0EA;
+$teal: #2CBACC;
+$royal-blue: #5300E5;
+$lViolet: #F3EFFA;
+$blue-black: #02001B;
 
-a{
-	text-decoration: none;
+$white: #ffffff;
+$black: #000000;
+$vulcan: #17161B;
+$grey: #525252;
+
+// color hover
+
+$violet-hover: #960CA3;
+$black-hover: #616161;
+
+// mqs 
+$xsmall:"(min-width: 321px)";
+$small-landscape:"(min-width: 400px)";
+$small:"(min-width: 768px)";
+$medium: "(min-width: 1024px)";
+
+// helpers
+.hide {
+	display: none;
+}
+
+.hide-medium-down {
+	display: block;
+	@media #{$medium} {
+		display: none;
+	}
+}
+
+.show-medium-up {
+	display: none;
+	@media #{$medium} {
+		display: block;
+	}
+}
+
+
+.hide-small-down {
+	display: block;
+	@media #{$small} {
+		display: none;
+	}
+}
+
+.show-small-up {
+	display: none;
+	@media #{$small} {
+		display: block;
+	}
+}
+
+
+.violet {
+	color: $violet;
+}
+
+.violet-hover {
+	color: $violet-hover;
+}
+
+.indigo {
+	color: $indigo;
+}
+
+.eggplant {
+	color: $eggplant;
+}
+
+.teal {
+	color: $teal;
+}
+
+.royal-blue {
+	color: $royal-blue;
+}
+
+.white {
+	color: $white;
+}
+
+.black {
+	color: $black;
 }
 
 h1,
@@ -32,8 +121,23 @@ h1 {
 	font-size: 64px;
 }
 
+.section-header {
+	font-size: 50px;
+	color: $black;
+	font-style: italic;
+	text-transform: uppercase;
+	letter-spacing: 3.5px;
+	font-weight: $reg;
+
+	&.white {
+		color: $white;
+	}
+}
+
 h3 {
 	font-size: 20px;
+	font-weight: $light;
+	letter-spacing: 1.4px;
 }
 
 h4 {
@@ -58,34 +162,23 @@ h4 {
 	text-align: center;
 }
 
-// colors
-$violet: #A30DB8; 
-$indigo: #2C209D;
-$teal: #2CBACC;
-
-
-$white: #ffffff;
-$black: #000000;
-$vulcan: #17161B;
-$grey: #6B6B6B;
-
-.violet {
-	color: $violet;
+.text-right {
+	display: block;
+	text-align: right;
 }
 
-.indigo {
-	color: $indigo;
+.upcase {
+	text-transform: uppercase;
+}
+.small-copy {
+	font-size: 12px;
 }
 
-.teal {
-	color: $teal;
-	text-decoration: none;
-}
+.italic-small {
+	font-size: 14px;
+	font-style: italic;
 
-.white {
-	color: $white;
 }
-
 
 // layout 
 
@@ -103,6 +196,11 @@ $grey: #6B6B6B;
 	}
 }
 
+.half {
+	width: 50%;
+	float: left;
+}
+
 .ul-white {
 	border-bottom: 1px solid $white;
 	display: inline-block;
@@ -110,31 +208,109 @@ $grey: #6B6B6B;
 
 // UI elements
 
-.btn--secondary {
-	padding: 7px;
-	border-radius: 30px;
-	text-align: center;
-	font-size: 14px;
-	font-weight: 300;
-	max-width: 70%;
-	background: $white;
+// link
+
+	// ANIMATION
+	$timing: 2s;
+	$style: linear;
+
+	@mixin transition($args) {
+	  transition: $args;
+	  -webkit-transition: $args;
+	  -moz-transition: $args;
+	  -ms-transition: $args;
+	  -o-transition: $args;
+	}
+
+a {
 	color: $violet;
-	font-weight: $light;
-	margin-top: 0;
-	display: block;
-	position: relative;
-	top: 30px;
-	transition: all 0.5s ease;
+	@include transition(all 0.3s ease-in-out);
+	text-decoration: none;
+
+	&:hover,
+	&:active {
+		color: lighten($violet, 25%);
+
+	}
+}
+
+a.text-link {
+	span {
+		border-bottom: 1px solid $violet;
+		@include transition(all 0.3s ease-in-out);
+	}
+	&:after{
+		content: " ";
+		background: url(../i/arrow.png);
+		position: relative;
+		left: 0;
+		height: 11px;
+		width: 11px;
+		display: inline-block;
+		@include transition(all 0.3s ease-in-out);
+	}
+
+	&:hover,
+	&:active {
+		span {	
+			color: $violet;
+		}
+
+		&:after {
+			content: " ";
+			left: 5px;
+		}
+	}
+}
+
+a.small-link {
+	color: $black;
+	font-size: 12px;
+	border-bottom: 1px solid $black;
+	line-height: 2;
+
+	&:hover,
+	&:active {
+		color: $black-hover;
+		border-bottom: 1px solid $black-hover;
+	}
+}
+
+// buttons
+
+.btn--secondary {
+	border-radius: 30px;
+	background: $white;
+	border: none;
+	@include transition(all 0.3s ease-in-out);
+	a {	
+  		font-size: 12px;
+  		float: none;
+  		color: $violet;
+  		font-weight: $light;
+  		font-style: italic;
+  		display: block;
+  		padding: 5px 15px;
+  		text-align: center;
+  		font-size: 14px;
+  		font-weight: 300;
+  		@include transition(all 0.3s ease-in-out);
+	}
 
 	&:hover,
 	&:active {
 		background: $violet;
-		color: $white;
+
+		a {
+			color: $white;
+		}
 	}
 }
 
+img {
+	max-width: 100%;
+}
 
-// 
 
 body,
 html {
@@ -148,21 +324,44 @@ body {
 	color: $grey;
 	overflow-x: hidden;
 
+	&.no-scroll {
+		overflow: hidden;
+	}
+
+	section {
+		padding: 60px 20px;
+		clear: both;
+
+		@media #{$small} {
+			padding: 100px 20px;
+		}
+	}
+
 	.outer-wrapper {
 		overflow-x: hidden;
 	}
 
 	.inner-wrapper {
 		max-width: 905px;
+		width: 80%;
+		margin: 0 auto;
+
+		@media #{$small} {
+			width: 70%;
+		}
+	}
+
+	.inner-wrapper-wide {
+		max-width: 1065px;
+		width: 90%;
 		margin: 0 auto;
 	}
 
 	.hero {
-		padding: 100px 40px 130px 40px;
-		height: 100vh;
+		padding: 170px 10px 130px 10px;
+		min-height: 700px;
 		background-image: url('../i/hero-gradient.png');
 		// fallback image
-
 
 		background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
 		background: linear-gradient(to right, #2E21A5 , #000000);
@@ -173,8 +372,12 @@ body {
 		background: -moz-linear-gradient(bottom right, #2E21A5, #000000);
 		background: linear-gradient(to bottom right, #2E21A5, #000000);
 		// diagonal gradient
+
+		@media #{$medium} {
+			min-height: 700px;
+			padding: 190px 40px 130px 40px;
+		}
 		        
-		
 
 		.half.left {
 			position: relative;
@@ -202,8 +405,12 @@ body {
 
 		.title {
 			line-height: 87px;
-			max-width: 387px;
+			width: 296px;
 			position: relative;
+
+			@media #{$small} {
+				width: 387px;
+			}
 
 			&:before {
 				content: '+';
@@ -249,20 +456,22 @@ body {
 				}
 
 				&:after{
-					content: ' ';
-					display: inline-block;
-					width: 100%;
-					height: 4px;
-					position: absolute;	
-					height: 29px;
-					width: 29px;
-					bottom: 5px;
-					border: 1px solid $violet;
-					border-radius: 50%;
-					border-radius: 50%;
-					left: 183px;
-					bottom: 24px;
-					text-shadow: rgba(0,0,0,.01) 0 0 1px;
+					@media #{$small} {
+						content: ' ';
+						display: inline-block;
+						width: 100%;
+						height: 4px;
+						position: absolute;	
+						height: 29px;
+						width: 29px;
+						bottom: 5px;
+						border: 1px solid $violet;
+						border-radius: 50%;
+						border-radius: 50%;
+						left: 183px;
+						bottom: 24px;
+						text-shadow: rgba(0,0,0,.01) 0 0 1px;
+					}
 				}
 			}
 
@@ -337,10 +546,6 @@ body {
 				}
 			}
 		}
-		.registrationLink{
-			text-decoration: none;
-			text-underline:none;
-		}
 
 		.event-info {
 			position: relative;
@@ -385,6 +590,18 @@ body {
 				z-index: 5;
 				position: relative;
 			}
+
+			button {
+				position: relative;
+				top: 20px;
+				display: block;
+
+				@media #{$medium} {
+					min-width: 168px;
+					top: 30px;
+				}
+
+			}
 		}
 	}
 }
@@ -413,8 +630,6 @@ body {
 	  }
 	  
 	  .hero {
-	  	min-height: 100vh;
-	  	height: auto !important;
 
 	  	.half {
 	  		&.right {
@@ -427,13 +642,19 @@ body {
 	  	  	float: none;
 	  	  	margin-top: 120px;
 	  	  	margin-bottom: 0;
-
-	  		  	.btn--secondary {
-	  		  		width: 100%;
-	  		  		font-size: 12px;
-	  		  	}
-	  	  }
-	  }
+	  	}
+	}
 }
 
 
+
+
+// Partials 
+// -----------------------
+@import "partials/navigation";
+@import "partials/about";
+@import "partials/speakers";
+@import "partials/sponsors";
+@import "partials/location";
+@import "partials/newsletter";
+@import "partials/footer";
