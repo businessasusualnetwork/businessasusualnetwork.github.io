@@ -3,7 +3,7 @@ section.footer {
 	padding: 0;
 
 	> .inner-wrapper-wide {
-		padding: 100px 20px 50px 20px;
+		padding: 100px 20px 0 20px;
 		position: relative;
 
 		@media #{$medium} {
@@ -99,11 +99,26 @@ section.footer {
 				float: right;
 
 				&:after {
-					content:"\f099";
+					content:"";
 					font-family: $font;
 					font-size: 20px;
 					color: $white;
 					@include transition(all 0.3s ease-in-out);
+				}
+
+
+				&.twitter {
+
+					&:after {
+						content:"\f099";
+					}
+				}
+
+				&.instagram {
+					margin-right:  20px;
+					&:after {
+						content:"\f16d";
+					}
 				}
 
 				&:hover,
@@ -117,10 +132,6 @@ section.footer {
 	}
 
 	.footer-copyright {
-		padding: 0;
-
-		@media #{$medium} {
-			padding: 25px 0;	
-		}
+		padding: 25px 0;
 	}
 }
