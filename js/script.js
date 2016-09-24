@@ -17,6 +17,7 @@ $(document).on('ready', function() {
  var $close = $('a.close');
  var $nav = $('.navigation-container .navigation ul');
  var $body = $('body');
+ var $links = $('.navigation-container .navigation ul li a');
 
  $menuTrigger.on('click touchstart', function(e){
  	e.preventDefault();
@@ -33,5 +34,16 @@ $(document).on('ready', function() {
  	$nav.removeClass('show');
  	$body.removeClass('no-scroll');
  });
+
+  $links.on('click', function (){
+  	setTimeout(function(){ 
+  		$overlay.addClass('hide');
+  		$close.addClass('hide');
+  		$nav.removeClass('show');
+  		$body.removeClass('no-scroll');
+  	}, 100);
+  })
+
+
 
 });
