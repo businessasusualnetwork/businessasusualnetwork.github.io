@@ -443,14 +443,14 @@ body {
 				position: absolute;
 			}
 
-			h1 {
+			> h1 {
 				position: static;
 				font-size: 47px;
 
 				@media #{$small} {
 					font-size: 64px;
 				}
-				
+
 				&:before{
 					content: '+';
 					font-family: $lato;
