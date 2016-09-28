@@ -90,18 +90,42 @@ section.sponsors {
 
 			.inner-wrapper {
 				text-align: center;
+				max-width: 100%;
+				width: 100%;
 
 				@media #{$small} {
 					padding-bottom: 30px;
+					max-width: 100%;
+					width: 100%;
+				}
+
+				.fifth {
+					width: 33%;
+					@media #{$small} {
+						width: 20%;
+					}
+				}
+
+				.mobile-wrapper {
+					width: 69%;
+					margin: 0 auto;
+
+					@media #{$small} {
+						width: auto;
+					}
+
+					.sponsor.fifth {
+						width: 50%;
+
+						@media #{$small} {
+							width: 20%;
+						}
+					}
 				}
 
 				.sponsor {
 					opacity: 0.5;
 					@include transition(all 0.3s ease-in-out);
-
-					&.half {
-						width: 50%;
-					}
 
 					img {
 						width: 80%;
@@ -114,7 +138,7 @@ section.sponsors {
 						}
 
 						@media #{$small} {
-							width: 60%;
+							width: 80%;
 
 							&:first-child {
 								margin-bottom: 0;
@@ -127,6 +151,21 @@ section.sponsors {
 
 						@media #{$small} {
 							padding-top: 25px;
+						}
+					}
+
+					&.sponsor05 {
+						padding-top: 13px;
+
+						@media #{$small} {
+							padding-top: 23px;
+						}
+					}
+
+
+					&.sponsor04 {
+						img {
+							max-width: 39%;
 
 						}
 					}
