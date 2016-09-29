@@ -100,10 +100,12 @@ section.sponsors {
 					width: 100%;
 				}
 
-				.fifth {
-					width: 33%;
+				.sixth {
+					width: 33.33%;
+					float: left;
+
 					@media #{$small} {
-						width: 20%;
+						width: 16.66%;
 					}
 				}
 
@@ -162,6 +164,10 @@ section.sponsors {
 							max-width: 39%;
 
 						}
+					}
+
+					&.sponsor06 {
+						margin-top: 10px;
 					}
 
 					&:hover,
