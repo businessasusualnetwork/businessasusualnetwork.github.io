@@ -22,16 +22,6 @@ section.location {
 		h2 {
 			position: relative;
 		}
-
-		h3 {
-			padding-top: 0;
-			padding-left: 120px;
-
-			@media #{$small-landscape} {
-				padding-left: 20px;
-				padding-top: 17px;
-			}
-		}
 	}
 
 	.map-box-container {

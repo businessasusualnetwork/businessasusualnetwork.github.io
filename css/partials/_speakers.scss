@@ -1,28 +1,13 @@
 .speakers {
-	background: url(../i/hp-about-bkg.png);
-	background-repeat: no-repeat; 
-	background-size: cover; 
 	.header {
 		margin-bottom: 100px;
 		position: relative;
-
-		&:after{
-			content:" ";
-			background: url(../i/shapes_about/header-circle.png) no-repeat;
-		    display: block;
-		    width: 130px;
-		    height: 160px;
-		    position: absolute;
-		    top: -42px;
-		    left: -40px;
-		    z-index: -1;		
-		}
 
 		span {
 			position: relative;
 			&:after{
 				content: " ";
-				height: 5px;
+				height: 3px;
 				width: 43px;
 				display: inline-block;
 				background: $eggplant;
@@ -30,11 +15,6 @@
 				bottom: 2px;
 				left: 0;
 			}
-		}
-
-		h3 {
-			padding-top: 15px;
-			padding-left: 55px;
 		}
 	}
 
@@ -58,9 +38,9 @@
 
 		&:nth-child(odd) {
 			.image-container {
-				box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
-				-webkit-box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
-				-moz-box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
+				-webkit-box-shadow: -7px 10px 20px 1px rgba(204,213,233,1);
+				-moz-box-shadow: -7px 10px 20px 1px rgba(204,213,233,1);
+				box-shadow: -7px 10px 20px 1px rgba(204,213,233,1);
 				
 					@media #{$small} {
 						float: left;
