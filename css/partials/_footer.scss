@@ -9,17 +9,6 @@ section.footer {
 		@media #{$medium} {
 			padding: 100px 0;	
 		}
-
-		&:before {
-			content:"";
-			background: url('../i/shapes_footer/lines.png');
-			background-repeat: no-repeat;
-			width: 111px;
-			height: 32px;
-			position: absolute;
-			left: 0;
-			top: 70px; 
-		}
 	}
 
 	.half {
@@ -64,39 +53,6 @@ section.footer {
 				top: -2px;
 			}
 
-			&:before {
-				content: "";
-
-				@media #{$small} {
-					content: '+';
-					font-family: $lato;
-					font-weight: 400;
-					color: #13194C;
-					font-style: normal;
-					font-size: 153px;
-					position: absolute;
-					right: 0;
-					top: -40px;
-					z-index: 9;
-				}
-			}
-
-			&:after {
-				content: "";
-
-				@media #{$small} {
-					content: '+';
-					font-family: $lato;
-					font-weight: 400;
-					color: #29283E;
-					font-style: normal;
-					font-size: 69px;
-					position: absolute;
-					right: -10px;
-					top: 60px;
-					z-index: 9;
-				}
-			}
 			.inner-wrapper {
 				width: 100%;
 				margin-top: 50px;

@@ -110,7 +110,7 @@
 
 		&:hover,
 		&:active {
-			color: $violet;
+			color: $eggplant;
 		}
 
 		span.label {
@@ -178,7 +178,7 @@
 						@media #{$medium} { 
 							display: block;
 							content: '';
-							border-bottom: solid 1px $violet;
+							border-bottom: solid 1px $eggplant;
 							transform: scaleX(0);
 							@include transition(all 0.3s ease-in-out);
 						}
@@ -199,7 +199,7 @@
 
 						@media #{$medium} { 
 							opacity: 1;
-							color: $violet;
+							color: $eggplant;
 
 							&:after {
 								transform: scaleX(1);
@@ -223,13 +223,13 @@
 						}
 
 					a {
-						border: 1px solid $violet;
-						padding: 5px 15px;
+						border: 1px solid $eggplant;
+						padding: 2px 25px;
 						text-align: center;
 						font-size: 14px;
 						font-weight: 300;
 						min-width: 130px;
-						color: $violet;
+						color: $white;
 						font-weight: $light;
 						font-style: italic;
 						display: block;
@@ -242,7 +242,7 @@
 
 						&:hover,
 						&:active {
-							background: $violet;
+							background: $eggplant-hover;
 							color: $white;
 							opacity: 1;
 						}

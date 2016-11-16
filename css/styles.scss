@@ -10,28 +10,35 @@
 
 $muli: 'Muli', sans-serif;
 $lato: 'Lato', sans-serif;
+$display: 'Playfair Display', serif;
+$open: 'Open Sans', sans-serif;
 $font: FontAwesome;
 $light: 300;
 $reg: 400;
+$bold: 700;
+$xBold: 900;
 
 // colors
 $violet: #A30DB8; 
 $indigo: #2C209D;
-$eggplant: #8830E8;
+$eggplant: #6D33D6;
 $lavender: #DFC0EA;
 $teal: #2CBACC;
-$royal-blue: #5300E5;
+$royal-blue: #2560EB;
+$blue: #3CB6EE;
 $lViolet: #F3EFFA;
 $blue-black: #02001B;
 
 $white: #ffffff;
 $black: #000000;
-$vulcan: #17161B;
+$vulcan: #323232;
 $grey: #525252;
 
 // color hover
 
 $violet-hover: #960CA3;
+
+$eggplant-hover: #8149E5;
 $black-hover: #616161;
 
 // mqs 
@@ -123,11 +130,12 @@ h1 {
 
 .section-header {
 	font-size: 50px;
-	color: $black;
+	font-family: $display;
+	color: $vulcan;
 	font-style: italic;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	letter-spacing: 3.5px;
-	font-weight: $reg;
+	font-weight: $bold;
 
 	&.white {
 		color: $white;
@@ -233,14 +241,12 @@ h4 {
 	}
 
 a {
-	color: $violet;
 	@include transition(all 0.3s ease-in-out);
 	text-decoration: none;
 
 	&:hover,
 	&:active {
 		color: lighten($violet, 25%);
-
 	}
 }
 
@@ -288,33 +294,45 @@ a.small-link {
 
 // buttons
 
-.btn--secondary {
+.btn {
 	border-radius: 30px;
-	background: $white;
-	border: none;
+	border: 1px solid $eggplant;
+	background: $eggplant;
+	min-width: 175px;
 	@include transition(all 0.3s ease-in-out);
-	a {	
-  		font-size: 12px;
-  		float: none;
-  		color: $violet;
-  		font-weight: $light;
-  		font-style: italic;
-  		display: block;
-  		padding: 5px 15px;
-  		text-align: center;
-  		font-size: 14px;
-  		font-weight: 300;
-  		@include transition(all 0.3s ease-in-out);
+
+	> a {
+		 color: $white;
+		 font-size: 12px;
+		 float: none;
+		 font-weight: $light;
+		 font-style: italic;
+		 display: block;
+		 padding: 2px 25px;
+		 text-align: center;
+		 font-size: 14px;
+		 font-weight: 300;
+		 @include transition(all 0.3s ease-in-out);
 	}
+
 
 	&:hover,
 	&:active {
-		background: $violet;
+		background: $eggplant-hover;
+		border: 1px solid $eggplant-hover;
+
 
 		a {
 			color: $white;
 		}
 	}
+}
+
+
+.btn--secondary {
+	background: $blue;
+	border: 1px solid $white;
+
 }
 
 img {
@@ -368,85 +386,13 @@ body {
 	}
 
 	.hero {
-		padding: 170px 10px 130px 10px;
 		min-height: 700px;
-		background-image: url('../i/hero-gradient.png');
-		// fallback image
+		background: $blue;
+    
 
-		background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
-		background: linear-gradient(to right, #2E21A5 , #000000);
-		// linear gradient
-
-		background: -webkit-linear-gradient(left top, #2E21A5, #000000);
-		background: -o-linear-gradient(bottom right, #2E21A5, #000000);
-		background: -moz-linear-gradient(bottom right, #2E21A5, #000000);
-		background: linear-gradient(to bottom right, #2E21A5, #000000);
-		// diagonal gradient
-
-		@media #{$medium} {
-			min-height: 700px;
-			padding: 190px 40px 130px 40px;
-		}
-		        
-
-		.half.left {
-			position: relative;
-
-			&:before {
-				content: '+';
-				font-family: $lato;
-				color: $violet;
-				font-size: 45px;
-				position: absolute;
-				bottom: -64px;
-			}
-
-			&:after {
-				content:' ';
-				height: 5px;
-				background-color: #8830E8;
-				width: 21px;
-				left: 134px;
-				bottom: -20px;
-				display: inline-block;
-				position: absolute;
-			}
-		}
 
 		.title {
-			line-height: 87px;
-			width: 306px;
-			position: relative;
 
-			@media #{$small} {
-				width: 387px;
-			}
-
-			&:before {
-				content: '+';
-				font-family: $lato;
-				display: inline-block;
-				width: 100%;
-				height: 4px;
-				position: absolute;	
-				bottom: 5px;
-				color: $violet;
-				left: -66px;
-				top: 50px;
-				opacity: 0.4;
-				font-size: 65px;
-			}
-
-			&:after {
-				content:' ';
-				height: 5px;
-				background-color: #8830E8;
-				width: 21px;
-				left: -37px;
-				bottom: 35px;
-				display: inline-block;
-				position: absolute;
-			}
 
 			> h1 {
 				position: static;
@@ -455,134 +401,28 @@ body {
 				@media #{$small} {
 					font-size: 64px;
 				}
-
-				&:before{
-					content: '+';
-					font-family: $lato;
-					display: inline-block;
-					width: 100%;
-					height: 4px;
-					position: absolute;	
-					bottom: 5px;
-					color: $violet;
-					left: 100%;
-					top: 66px;
-					opacity: 0.4;
-					font-size: 65px;
-				}
-
-				&:after{
-					@media #{$small} {
-						content: ' ';
-						display: inline-block;
-						width: 100%;
-						height: 4px;
-						position: absolute;	
-						height: 29px;
-						width: 29px;
-						bottom: 5px;
-						border: 1px solid $violet;
-						border-radius: 50%;
-						border-radius: 50%;
-						left: 183px;
-						bottom: 24px;
-						text-shadow: rgba(0,0,0,.01) 0 0 1px;
-					}
-				}
-			}
-
-			span {
-				position: relative;
-				&:before{
-					content: ' ';
-					display: inline-block;
-					width: 100%;
-					height: 4px;
-					position: absolute;	
-					bottom: 5px;
-					background: $violet;
-				}
 			}
 		}
 
 		.sub-title {
 			position: relative;
-			&:before {
-					content: ' ';
-					border: 4px solid #8831E9;
-					width: 19px;
-					height: 19px;
-					display: inline-block;
-					position: absolute;
-					border-radius: 50%;
-					z-index: 1;
-					opacity: 4;
-					right: 140px;
-					top: -30px;
-				}
+			
 			h3 {
 				font-size: 16px;
 				position: relative;
 				z-index: 5;
 				font-weight: $light;
-
-				&:before {
-					content: ' ';
-					background-color: #8831E9;
-					width: 34px;
-					height: 34px;
-					display: inline-block;
-					position: absolute;
-					border-radius: 50%;
-					z-index: 1;
-					opacity: 0.4;
-					top: -42px;
-					left: -20px;
-				}
 			}
 
 			h5 {
 				font-size: 23px;
 				position: relative;
 				z-index: 5;
-
-				&:before {
-					content: ' ';
-					border: 4px solid #8831E9;
-					width: 75px;
-					height: 75px;
-					display: inline-block;
-					position: absolute;
-					border-radius: 50%;
-					z-index: 1;
-					opacity: 4;
-					top: -42px;
-					right: 220px;
-					opacity: .3;
-				}
 			}
 		}
 
 		.event-info {
-			position: relative;
-			margin-bottom: -80px;
-			width: 80%;
-			float: right;
-
-			&:before {
-				content: '';
-				display:inline-block;
-				width: 126px;
-				height: 126px;
-				background-color: #240B6F;
-				border-radius: 50%;
-				position: absolute;
-				z-index: 1;
-				top: -50px;
-				left: -68px;
-				opacity: 0.4;
-			}
-
+		
 			h3 {
 				margin-bottom: 12px;
 				z-index: 5;
@@ -606,62 +446,9 @@ body {
 				z-index: 5;
 				position: relative;
 			}
-
-			button {
-				position: relative;
-				top: 20px;
-				display: block;
-
-				@media #{$medium} {
-					min-width: 168px;
-					top: 30px;
-				}
-
-			}
 		}
 	}
 }
-
-
-@media (max-width: 768px) {
-
-	.coming-soon-banner {
-		font-size: 12px;
-	}
-
-	.layout {
-		display: block;
-	}
-	  .half {
-		width: 100%;
-
-		&.right {
-			margin-top: 100px;
-		}
-
-		h1 {
-			font-size: 49px;
-			line-height: 65px;
-		}
-	  }
-	  
-	  .hero {
-
-	  	.half {
-	  		&.right {
-	  			margin-top: 0;
-	  		}
-	  	}
-
-	  	  .event-info {
-	  	  	min-width: 100%;
-	  	  	float: none;
-	  	  	margin-top: 120px;
-	  	  	margin-bottom: 0;
-	  	}
-	}
-}
-
 
 
 

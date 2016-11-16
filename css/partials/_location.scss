@@ -5,43 +5,6 @@ section.location {
 	position: relative;
 	margin-top: 50px;
 
-	.inner-wrapper-wide {
-		position: relative;
-
-		&:before {
-			content: "";
-
-			@media #{$small} {
-				content: '+';
-				opacity: 1;
-				font-family: $lato;
-				font-weight: 400;
-				color: $royal-blue;
-				font-style: normal;
-				font-size: 134px;
-				position: absolute;
-				right: 0;
-				top: 20px;
-				z-index: 9;
-			}
-		}
-
-		&:after {
-			background: none;
-				@media #{$small} {
-		    	content:"";
-		    	background: url('../i/shapes_location/plus.png');
-		    	font-size: 80px;
-		    	position: absolute;
-		    	background-repeat: no-repeat;
-			    width: 82px;
-			    height: 82px;
-			    top: 131px;
-			    z-index: 9;
-			    right: -71px;
-			}
-		}
-	}
 
 	.header {
 		    margin-bottom: 50px;
@@ -49,18 +12,6 @@ section.location {
 
 		    @media #{$small} {
 		    	margin-bottom: 100px;
-		    }
-
-		    &:before {
-		    	content:"";
-		    	background: url('../i/shapes_location/triangle.png');
-		    	font-size: 80px;
-		    	position: absolute;
-		    	background-repeat: no-repeat;
-	    	    width: 163px;
-	    	    height: 163px;
-	    	    top: -72px;
-	    	    left: -50px;
 		    }
 		h2,
 		h3 {
@@ -70,19 +21,6 @@ section.location {
 
 		h2 {
 			position: relative;
-
-			span {
-				&:after {
-					content: " ";
-				    height: 5px;
-				    width: 97px;
-				    display: inline-block;
-				    background: $violet;
-				    position: absolute;
-				    bottom: 2px;
-				    left: 0;
-				}
-			}
 		}
 
 		h3 {
