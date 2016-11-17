@@ -27,13 +27,13 @@
 		    box-shadow: 1px 9px 28px -12px rgba(163,13,184,0.68);
 
 		  .navigation ul li.last a {
-		  	background: $violet;
+		  	background: $eggplant;
 		  	color: $white;
 
 		  	&:hover,
 		  	&:active {
-		  		background: $white;
-		  		color: $violet;
+		  		background: $eggplant-hover;
+		  		color: $white;
 		  	}
 		  }
 	}
@@ -214,7 +214,7 @@
 					margin-top: 20px;
 
 					@media #{$medium} { 
-						top: -6px;
+						top: -2px;
 						left: 20px;
 						position: relative;
 						width: auto;
@@ -224,12 +224,13 @@
 
 					a {
 						border: 1px solid $eggplant;
+						background: rgba( 255, 255, 255, 0);
 						padding: 2px 25px;
 						text-align: center;
 						font-size: 14px;
 						font-weight: 300;
 						min-width: 130px;
-						color: $white;
+						color: $eggplant;
 						font-weight: $light;
 						font-style: italic;
 						display: block;

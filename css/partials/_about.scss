@@ -2,17 +2,23 @@
 
 section.about {
 	min-height: 400px;
-	position: relative;
-
 	.inner-wrapper {
+		max-width: 55%;
+		position: relative;
+
 		&:before {
-			content: "Bau";
+			content: "BAU";
 			@extend .display;
 			font-size: 300px;
-			opacity: 0.04;
+			opacity: 0.06;
+			z-index: -1;
 			position: absolute;
-    		top: 0;
-    		z-index: -1;
+			top: -150px;
+			left: -40%;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			width: 500px;
 		}
 	}
 

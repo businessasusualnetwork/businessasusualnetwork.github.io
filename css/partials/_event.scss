@@ -141,7 +141,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 				&:after {
 					position: absolute;
 					right: 0;
-					top: 59px;	
+					top: 40px;	
 				}
 			}
 		}
@@ -168,7 +168,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 
 			h3 {
 				&:before {
-					content:"\f05d";
+					content:"\f006";
 					font-family: $font;
 					padding-right: 0;
 				}
