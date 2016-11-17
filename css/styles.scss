@@ -139,6 +139,7 @@ h1 {
 	text-transform: capitalize;
 	letter-spacing: 3.5px;
 	@extend .display;
+	margin-bottom: 10px;
 
 	&.white {
 		color: $white;
@@ -216,23 +217,13 @@ h4 {
 
 // layout 
 
-.layout {
-	display: flex;
-	flex-wrap: no-wrap;
-	align-content: center;
-
-	.half {
-		flex-basis: 50%;
-	}
-
-	.align-bottom {
-		align-self: flex-end;
-	}
-}
-
 .half {
-	width: 50%;
-	float: left;
+	width: 100%;
+
+	@media #{$medium} {
+		width: 50%;
+		float: left;
+	}
 }
 
 .third {
@@ -357,7 +348,13 @@ a.small-link {
 
 .btn--secondary {
 	background: $blue;
-	border: 1px solid $white;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+
+	&:hover,
+	&:active {
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		background: rgba(255, 255, 255, 0.2);
+	}
 
 }
 
@@ -365,6 +362,43 @@ img {
 	max-width: 100%;
 }
 
+
+// flair 
+
+
+.header-line-blue {
+	&:after {
+		content: " ";
+		width: 76px;
+		height: 3px;
+		background: $blue;
+		display: block;
+
+	}
+}
+
+
+.header-line-royal {
+	&:after {
+		content: " ";
+		width: 76px;
+		height: 3px;
+		background: $royal-blue;
+		display: block;
+
+	}
+}
+
+.header-line-eggplant {
+	&:after {
+		content: " ";
+		width: 76px;
+		height: 3px;
+		background: $eggplant;
+		display: block;
+
+	}
+}
 
 body,
 html {
@@ -412,21 +446,28 @@ body {
 	}
 
 	.hero {
-		min-height: 700px;
 		background: $blue;
+		padding: 164px 20px 80px 20px;
+
+		.inner-wrapper-wide {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
 		.title {
 			> h1 {
 				font-size: 47px;
 			}
 
 			h2 {
-				font-size: 47px;
+				font-size: 37px;
 			}
 
 			h3 {
 				font-size: 30px;
 				opacity: 0.7;
 				font-weight: $reg;
+				margin-bottom: 20px;
 			}
 		}
 
@@ -436,6 +477,7 @@ body {
 				position: relative;
 				z-index: 5;
 				font-weight: $light;
+				margin-bottom: 5px;
 			}
 		}
 
@@ -445,12 +487,30 @@ body {
 				font-weight: $xbold;
 				font-size: 14px;
 				font-family: $open;
+				margin-bottom: 10px;
+
+				&:before {
+					content:"\f017";
+					font-family: $font;
+					padding-right: 5px;
+				}
 			}
 
 			h4 {
-				margin-bottom: 12px;
 				z-index: 5;
 				position: relative;
+				padding-left: 19px;
+			}
+
+			h5 {
+				font-size: 11px;
+				letter-spacing: 1.9px;
+				margin-bottom: 30px;
+				padding-left: 19px;
+			}
+
+			.btn.btn--secondary {
+				margin-left: 13px;
 			}
 		}
 	}

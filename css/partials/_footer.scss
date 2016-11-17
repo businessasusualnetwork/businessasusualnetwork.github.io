@@ -3,11 +3,11 @@ section.footer {
 	padding: 0;
 
 	> .inner-wrapper-wide {
-		padding: 100px 20px 0 20px;
+		padding: 50px 20px 0 20px;
 		position: relative;
 
 		@media #{$medium} {
-			padding: 100px 0;	
+			padding: 50px 0;	
 		}
 	}
 
