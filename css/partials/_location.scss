@@ -1,21 +1,38 @@
 section.location {
-	padding: 140px 0 0 0;
+	padding: 40px 0 0 0;
+
+	@media #{$small} {
+		padding: 50px 0 0 0;
+	}
 
 	.header {
-		width: 40%;
-		float: left;
+		width: 100%;
+		position: relative;
+
+		@media #{$small} {
+			width: 40%;
+			float: left;
+		}
 	}
 
 	.address-container {
-		width: 60%;
-		float: left;
+		width: 100%;
 		margin-top: 37px;
+
+		@media #{$small} {
+			width: 60%;
+			float: left;
+		}
 
 
 		h3 {
 			padding-bottom: 5px;
 			font-size: 20px;
-			text-align: right;
+			text-align: left;
+
+			@media #{$small} {
+				text-align: right;
+			}
 
 			&:before {
 				content:"\f041";
@@ -31,8 +48,12 @@ section.location {
 
 		p {
 			color: $soft-grey;
-			text-align: right;
+			text-align: left;
 			margin: 0;
+
+			@media #{$small} {
+				text-align: right;
+			}
 		}
 
 		a {
@@ -43,7 +64,11 @@ section.location {
 
 	.map-box-container {
 		clear: both;
-		margin-top: 100px;
+		margin-top: 50px;
+
+		@media #{$small} {
+			margin-top: 100px;
+		}
 	}
 
 	.map-img {

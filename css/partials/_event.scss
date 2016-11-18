@@ -2,19 +2,50 @@
 	background: url(../i/hp-about-bkg.png);
 	background-repeat: no-repeat; 
 	background-size: cover; 
-	padding: 100px 0 0 0;
+	padding: 50px 0 0 0;
+
+	.inner-wrapper-wide {
+		position: relative;
+		&:before {
+			content:"";
+			background: url(../i/snowflakes-m.svg) no-repeat;
+			width: 117px;
+			height: 181px;
+			display: block;
+			top: 0;
+			right: 0;
+			position: absolute;
+			top: -96px;
+		}
+	}
+
 
 	.event-intro-copy {
-		margin-bottom: 120px;
+		margin-bottom: 70px;
+
+		@media #{$medium} {
+			margin-bottom: 120px;
+		}
 	}
 
 	.header {
-		margin-bottom: 80px;
+		margin-bottom: 50px;
+
+		@media #{$medium} {
+			margin-bottom: 80px;
+		}
 	}
 
 	.teaser {
-		width: 40%;
-		float: left;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 35px;
+
+		@media #{$medium} {
+			width: 40%;
+			text-align: left;
+			float: left;
+		}
 
 		.subheader {
 			margin: 0;
@@ -22,9 +53,14 @@
 	}
 
 	.copy {
-		width: 60%;
-		float: left;
-		padding-left: 50px;
+		width: 100%;
+		text-align: left;
+
+		@media #{$medium} {
+			width: 60%;
+			float: left;
+			padding-left: 50px;
+		}
 
 		p {
 			margin: 0;
@@ -53,11 +89,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 			.small-copy {
 				color: $white;
 			}
+
+			&:last-child {
+				padding-bottom: 0;
+			}
 		}
 
 		.col-1 {
-			width: 12.55%;
-			padding-right: 40px;
+			width: 100%;
+			margin-bottom: 10px;
+
+			@media #{$small-m} {
+				width: 12.55%;
+				padding-right: 40px;
+			}
 
 			h3 {
 				margin-bottom: 80px;
@@ -65,7 +110,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 
 			h4,
 			p {
-				text-align: right;
+				text-align: left;
+				display: inline-block;
+				margin: 0;
+
+				@media #{$small-m} {
+					text-align: right;
+					display: block;
+				}
 			}
 
 			.small-copy {
@@ -74,21 +126,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 					font-size: 11px;
 					font-weight: $light;
 					letter-spacing: .9px;
-					display: block;
+					display: inline-block;
+
+					@media #{$small-m} {
+						display: block;
+					}
 				}
 			}
 		}
 
-		.col-2 {
-			border-left: 2px solid rgba(255, 255, 255, 0.5);
-		}
 
 		.col-2,
 		.col-3,
 		.col-4 {
-			width: 29.15%;
-			padding: 0 5.7%;
-			text-align: center;
+			width: 100%;
+			padding: 10px 0;
+
+			@media #{$small-m} {
+				width: 29.15%;
+				padding: 0 5.7%;
+				text-align: center;
+			}
+		}
+
+		.col-2 {
+			border-top: 2px solid rgba(255, 255, 255, 0.5);
+			padding-top: 20px;
+
+			@media #{$small-m} {
+				border-left: 2px solid rgba(255, 255, 255, 0.5);
+				padding: 0 5.7%;
+				border-top: none;
+			}
 		}
 	}
 }
@@ -99,13 +168,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 	.inner-wrapper {
 		max-width: 840px;
 		margin: 0 auto;
+		position: relative;
+
+		&:before {
+			content:"";
+			background: url(../i/snowflakes-m.svg) no-repeat;
+			width: 117px;
+			height: 181px;
+			display: block;
+			top: 0;
+			right: 0;
+			position: absolute;
+			opacity: 0.6;
+		}
+
 	}
 
 	.event-overview-detail {
-		width: 65%;
+		width: 100%;
 		float: left;
 		margin-bottom: 90px;
 		position: relative;
+
+		@media #{$small-m} {
+			max-width: 65%;
+			margin-top: 0;
+		}
 
 			&:before {
 				content: "01";
@@ -136,14 +224,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 					top: 17px;
 				}
 			}
-
-			&.header-line-royal {
-				&:after {
-					position: absolute;
-					right: 0;
-					top: 40px;	
-				}
-			}
 		}
 
 		h4 {
@@ -160,10 +240,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 		
 		&.event-overview-detail02 {
 			float: right;
+			position: relative;
 
 			&:before {
 				content: "02";
 				right: -18px;
+			}
+
+			&:after {
+				content: "";
+			    background: url(../i/snowflakes-m.svg) no-repeat;
+			    width: 117px;
+			    height: 181px;
+			    width: 117px;
+			    height: 181px;
+			    display: block;
+			    top: 17%;
+			    left: -26%;
+			    position: absolute;
+			    opacity: .5;
+
+			    @media #{$small-m} {
+			    	background: url(../i/snowflakes-m-180.svg);
+			    	top: -12%;
+			    	left: -80%;
+			    }
 			}
 
 			h3 {
@@ -172,12 +273,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 					font-family: $font;
 					padding-right: 0;
 				}
-			}
-
-			h3,
-			h4,
-			p {
-				text-align: right;
 			}
 		}
 

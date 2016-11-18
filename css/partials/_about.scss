@@ -2,9 +2,15 @@
 
 section.about {
 	min-height: 400px;
+	
 	.inner-wrapper {
-		max-width: 55%;
+		width: 100%;
 		position: relative;
+
+		@media #{$medium} {
+			max-width: 55%;
+			margin-top: 0;
+		}
 
 		&:before {
 			content: "BAU";
@@ -23,8 +29,12 @@ section.about {
 	}
 
 	.header {
-		width: 30%;
-		float: left;
+		width: 100%;
+
+		@media #{$small} {
+			width: 30%;
+			float: left;
+		}
 	}
 
 	.copy-section {

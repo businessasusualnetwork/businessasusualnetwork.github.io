@@ -45,6 +45,7 @@ $black-hover: #616161;
 // mqs 
 $xsmall:"(min-width: 321px)";
 $small-landscape:"(min-width: 400px)";
+$small-m:"(min-width: 687px)";
 $small:"(min-width: 768px)";
 $medium: "(min-width: 1024px)";
 
@@ -400,6 +401,21 @@ img {
 	}
 }
 
+.icon-header {
+	position: relative;
+	&:before {
+		content: "";
+	    background: url(../i/snowflakes-m-180.svg) no-repeat;
+	    width: 117px;
+        height: 181px;
+		position: absolute;
+		left: -50px;
+		top: -20px;
+        opacity: .6;
+        display: block;
+	}
+}
+
 body,
 html {
 	max-width: 100%;
@@ -490,7 +506,6 @@ body {
 				font-weight: $xbold;
 				font-size: 14px;
 				font-family: $open;
-				margin-bottom: 10px;
 
 				&:before {
 					content:"\f017";
@@ -521,7 +536,12 @@ body {
 			}
 
 			.btn.btn--secondary {
-				margin-left: 13px;
+				margin-top: 20px;
+
+				@media #{$small} {
+					margin-left: 13px;
+					margin-top: 0;
+				}
 			}
 		}
 	}

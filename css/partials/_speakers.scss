@@ -1,4 +1,21 @@
 .speakers {
+	position: relative;
+	
+	.inner-wrapper-wide {
+		position: static;
+		&:before {
+			content: "";
+		    background: url(../i/snowflakes-m.svg) no-repeat;
+		    width: 117px;
+	        height: 181px;
+			position: absolute;
+	        top: -25%;
+	        right: 10%;
+	        opacity: .5;
+	        display: block;
+		}
+	}
+
 	.header {
 		margin-bottom: 100px;
 		position: relative;
@@ -47,7 +64,7 @@
 						clear: both;
 
 						h4 {
-							color: $royal-blue
+							color: $eggplant;
 						}
 					}
 				}
