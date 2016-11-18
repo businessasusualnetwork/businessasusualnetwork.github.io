@@ -21,10 +21,13 @@
 
 
 	.event-intro-copy {
+		max-width: 750px;
+		margin: 0 auto;
 		margin-bottom: 70px;
 
 		@media #{$medium} {
 			margin-bottom: 120px;
+			max-width: 100%;
 		}
 	}
 
@@ -271,7 +274,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', end
 				&:before {
 					content:"\f006";
 					font-family: $font;
-					padding-right: 0;
 				}
 			}
 		}
