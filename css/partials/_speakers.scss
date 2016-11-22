@@ -5,19 +5,22 @@
 		position: static;
 		&:before {
 			content: "";
-		    background: url(../i/snowflakes-m.svg) no-repeat;
 		    width: 117px;
 	        height: 181px;
 			position: absolute;
-	        top: -25%;
-	        right: 10%;
-	        opacity: .5;
 	        display: block;
+
+	        @media #{$small} {
+				right: 10%;
+				top: -100px;
+				 opacity: .5;
+				 background: url(../i/snowflakes-m.svg) no-repeat;	
+			}
 		}
 	}
 
 	.header {
-		margin-bottom: 100px;
+		margin-bottom: 120px;
 		position: relative;
 	}
 
@@ -41,9 +44,10 @@
 
 		&:nth-child(odd) {
 			.image-container {
-				-webkit-box-shadow: -7px 10px 20px 1px rgba(204,213,233,1);
-				-moz-box-shadow: -7px 10px 20px 1px rgba(204,213,233,1);
-				box-shadow: -7px 10px 20px 1px rgba(204,213,233,1);
+
+				box-shadow: -38px -38px 0px 2px RGBA(37, 96, 235, 1.00);
+				-webkit-box-shadow: -38px -38px 0px 2px rgba(37, 96, 235, 1.00);
+				-moz-box-shadow: -38px -38px 0px 2px rgba(37, 96, 235, 1.00);
 				
 					@media #{$small} {
 						float: left;
@@ -57,11 +61,10 @@
 				.quote-container {
 					@media #{$small} {
 						float: left;
+						padding-left: 7%;
 					}
 
 					.speaker-info {
-						left: -30px;
-						clear: both;
 
 						h4 {
 							color: $royal-blue;
@@ -102,15 +105,14 @@
 				.quote-container {
 					@media #{$small} {
 						float: left;
+						padding-right: 7%;
 					}		
 
 				.speaker-info {
-					clear: both;
-					right: -30px;
-					text-align: right;
+					text-align: right;	
 
 						h4 {
-							color: $violet;
+							color: $eggplant;
 						}
 				}
 			}
@@ -133,6 +135,7 @@
 			.image-container {
 				width: 100%;
 				position: relative;
+				margin-bottom: 20px;
 
 				@media #{$small} {
 					width: 50%;
@@ -198,20 +201,13 @@
 
 				@media #{$small} {
 					width: 50%;
+					margin-top: 10%;
 				}
 
 				blockquote {
 					padding: 20px 0;
 					max-width: 100%;
 					margin: 0 auto;
-
-					@media #{$xsmall} {
-						max-width: 100%;
-					}
-
-					@media #{$small} {
-						max-width: 260px;
-					}
 				
 					// &:before {
 					// 	content: " ";
@@ -226,10 +222,6 @@
 
 				.speaker-info {
 					position: relative;
-
-					@media #{$small} {
-						padding-top: 25px;
-					}
 
 					p {
 						margin-top: 5px;

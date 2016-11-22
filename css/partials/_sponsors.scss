@@ -10,7 +10,8 @@ section.sponsors {
 
 	.sponsors-preheading {
 		.inner-wrapper-wide {
-			position: relative;		
+			position: relative;	
+			margin-bottom: 10px;	
 		}
 	}
 
@@ -39,6 +40,7 @@ section.sponsors {
 			font-family: $muli;
 			font-weight: $reg;
 			padding-bottom: 20px;
+			display: none;
 		}
 
 		.sponsors-list-container-inner {
@@ -47,10 +49,10 @@ section.sponsors {
 				text-align: center;
 				max-width: 100%;
 				width: 100%;
-				padding-bottom: 35px;
+				padding: 35px 0;
 
 				@media #{$small} {
-					padding-bottom: 30px;
+					padding: 30px 0;
 					max-width: 100%;
 					width: 100%;
 				}
@@ -85,6 +87,11 @@ section.sponsors {
 					opacity: 0.5;
 					@include transition(all 0.3s ease-in-out);
 
+					&.half {
+						width: 50%;
+						float: left;
+					}
+
 					img {
 						width: 80%;
 
@@ -98,19 +105,15 @@ section.sponsors {
 					}
 
 					&.sponsor01 {
-						padding-top: 16px;
+						padding-top: 3px;
 
 						@media #{$small} {
-							padding-top: 20px;
+							padding-top: 6px;
 						}
 					}
 
 					&.sponsor05 {
 						padding-top: 13px;
-
-						@media #{$small} {
-							padding-top: 20px;
-						}
 					}
 
 

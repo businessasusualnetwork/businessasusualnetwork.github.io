@@ -30,6 +30,7 @@
 		  	background: $eggplant;
 		  	color: $white;
 
+
 		  	&:hover,
 		  	&:active {
 		  		background: $eggplant-hover;
@@ -49,17 +50,14 @@
 	    transition: 0.5s;
 	    width:100%;
 	    z-index: 300;
-	    background-image: url('../i/hero-gradient.png');
-	    // fallback image
-
-	    background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
-	    background: linear-gradient(to right, #2E21A5 , #000000);
-	    // linear gradient
-
-	    background: -webkit-linear-gradient(left top, #2E21A5, #000000);
-	    background: -o-linear-gradient(bottom right, #2E21A5, #000000);
-	    background: -moz-linear-gradient(bottom right, #2E21A5, #000000);
-	    background: linear-gradient(to bottom right, #2E21A5, #000000);
+	   	background: rgba(37,96,235,1);
+background: -moz-linear-gradient(left, rgba(37,96,235,1) 0%, rgba(63,191,255,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(37,96,235,1)), color-stop(100%, rgba(63,191,255,1)));
+background: -webkit-linear-gradient(left, rgba(37,96,235,1) 0%, rgba(63,191,255,1) 100%);
+background: -o-linear-gradient(left, rgba(37,96,235,1) 0%, rgba(63,191,255,1) 100%);
+background: -ms-linear-gradient(left, rgba(37,96,235,1) 0%, rgba(63,191,255,1) 100%);
+background: linear-gradient(to right, rgba(37,96,235,1) 0%, rgba(63,191,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2560eb', endColorstr='#3fbfff', GradientType=1 );
 	    // diagonal gradient
 	    opacity: 0.95;
 
@@ -223,19 +221,26 @@
 						}
 
 					a {
-						border: 1px solid $eggplant;
-						background: rgba( 255, 255, 255, 0);
-						padding: 2px 25px;
+						color: $white;
+						background: $eggplant; 
+						padding: 10px;
 						text-align: center;
 						font-size: 14px;
 						font-weight: 300;
 						min-width: 130px;
-						color: $eggplant;
 						font-weight: $light;
 						font-style: italic;
 						display: block;
 						@include transition(all 0.3s ease-in-out);
 						border-radius: 30px;
+
+						@media #{$medium} { 
+							padding: 2px 20px;
+							border: 1px solid $eggplant;
+							background: $white; 
+							color: $eggplant;
+
+						}
 
 						&:after {
 							border-bottom: none;
