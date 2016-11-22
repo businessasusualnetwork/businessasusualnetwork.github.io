@@ -481,6 +481,7 @@ body {
 			> h1 {
 				font-size: 43px;
 				position: relative;
+				letter-spacing: 3.5px;
 
 				@media #{$small-landscape} {
 					font-size: 47px;
