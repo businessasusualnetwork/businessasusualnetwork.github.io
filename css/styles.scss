@@ -10,33 +10,42 @@
 
 $muli: 'Muli', sans-serif;
 $lato: 'Lato', sans-serif;
+$display: 'Playfair Display', serif;
+$open: 'Open Sans', sans-serif;
 $font: FontAwesome;
 $light: 300;
 $reg: 400;
+$bold: 700;
+$xbold: 900;
 
 // colors
 $violet: #A30DB8; 
 $indigo: #2C209D;
-$eggplant: #8830E8;
+$eggplant: #6D33D6;
 $lavender: #DFC0EA;
 $teal: #2CBACC;
-$royal-blue: #5300E5;
+$royal-blue: #2560EB;
+$blue: #3CB6EE;
 $lViolet: #F3EFFA;
 $blue-black: #02001B;
 
 $white: #ffffff;
 $black: #000000;
-$vulcan: #17161B;
+$vulcan: #323232;
 $grey: #525252;
+$soft-grey: #8F8F8F;
 
 // color hover
 
 $violet-hover: #960CA3;
+
+$eggplant-hover: #8149E5;
 $black-hover: #616161;
 
 // mqs 
 $xsmall:"(min-width: 321px)";
 $small-landscape:"(min-width: 400px)";
+$small-m:"(min-width: 687px)";
 $small:"(min-width: 768px)";
 $medium: "(min-width: 1024px)";
 
@@ -95,6 +104,10 @@ $medium: "(min-width: 1024px)";
 	color: $teal;
 }
 
+.blue {
+	color: $blue;
+}
+
 .royal-blue {
 	color: $royal-blue;
 }
@@ -123,11 +136,11 @@ h1 {
 
 .section-header {
 	font-size: 50px;
-	color: $black;
-	font-style: italic;
-	text-transform: uppercase;
+	color: $vulcan;
+	text-transform: capitalize;
 	letter-spacing: 3.5px;
-	font-weight: $reg;
+	@extend .display;
+	margin-bottom: 10px;
 
 	&.white {
 		color: $white;
@@ -138,10 +151,17 @@ h3 {
 	font-size: 20px;
 	font-weight: $light;
 	letter-spacing: 1.4px;
+	color: $soft-grey;
 }
 
 h4 {
 	font-style: 16px;
+}
+
+.display {
+	font-family: $display;
+	font-weight: $bold;
+	font-style: italic;
 }
 
 .italic {
@@ -172,6 +192,7 @@ h4 {
 }
 .small-copy {
 	font-size: 12px;
+	font-style: italic;
 }
 
 .italic-small {
@@ -180,25 +201,30 @@ h4 {
 
 }
 
-// layout 
-
-.layout {
-	display: flex;
-	flex-wrap: no-wrap;
-	align-content: center;
-
-	.half {
-		flex-basis: 50%;
-	}
-
-	.align-bottom {
-		align-self: flex-end;
-	}
+.subheader {
+	font-family: $muli;
+	font-weight: $reg;
+	letter-spacing: 1.64px;
+	font-size: 23px;
 }
 
+.eyebrow {
+	font-family: $open;
+	font-size: 14px;
+	letter-spacing: 2.43px;
+	text-transform: uppercase;
+	font-weight: $xbold;
+}
+
+// layout 
+
 .half {
-	width: 50%;
-	float: left;
+	width: 100%;
+
+	@media #{$medium} {
+		width: 50%;
+		float: left;
+	}
 }
 
 .third {
@@ -233,14 +259,12 @@ h4 {
 	}
 
 a {
-	color: $violet;
 	@include transition(all 0.3s ease-in-out);
 	text-decoration: none;
 
 	&:hover,
 	&:active {
 		color: lighten($violet, 25%);
-
 	}
 }
 
@@ -288,28 +312,33 @@ a.small-link {
 
 // buttons
 
-.btn--secondary {
+.btn {
 	border-radius: 30px;
-	background: $white;
-	border: none;
+	border: 1px solid $eggplant;
+	background: $eggplant;
+	min-width: 175px;
 	@include transition(all 0.3s ease-in-out);
-	a {	
-  		font-size: 12px;
-  		float: none;
-  		color: $violet;
-  		font-weight: $light;
-  		font-style: italic;
-  		display: block;
-  		padding: 5px 15px;
-  		text-align: center;
-  		font-size: 14px;
-  		font-weight: 300;
-  		@include transition(all 0.3s ease-in-out);
+
+	> a {
+		 color: $white;
+		 font-size: 12px;
+		 float: none;
+		 font-weight: $light;
+		 font-style: italic;
+		 display: block;
+		 padding: 2px 25px;
+		 text-align: center;
+		 font-size: 14px;
+		 font-weight: 300;
+		 @include transition(all 0.3s ease-in-out);
 	}
+
 
 	&:hover,
 	&:active {
-		background: $violet;
+		background: $eggplant-hover;
+		border: 1px solid $eggplant-hover;
+
 
 		a {
 			color: $white;
@@ -317,10 +346,75 @@ a.small-link {
 	}
 }
 
+
+.btn--secondary {
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	background: 1px solid rgba(255, 255, 255, 0.0);
+
+	&:hover,
+	&:active {
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+}
+
 img {
 	max-width: 100%;
 }
 
+
+// flair 
+
+
+.header-line-blue {
+	&:after {
+		content: " ";
+		width: 76px;
+		height: 3px;
+		background: $blue;
+		display: block;
+
+	}
+}
+
+
+.header-line-royal {
+	&:after {
+		content: " ";
+		width: 76px;
+		height: 3px;
+		background: $royal-blue;
+		display: block;
+
+	}
+}
+
+.header-line-eggplant {
+	&:after {
+		content: " ";
+		width: 76px;
+		height: 3px;
+		background: $eggplant;
+		display: block;
+
+	}
+}
+
+.icon-header {
+	position: relative;
+	&:before {
+		content: "";
+	    background: url(../i/snowflakes-m-180.svg) no-repeat;
+	    width: 117px;
+        height: 181px;
+		position: absolute;
+		left: -50px;
+		top: -20px;
+        opacity: .6;
+        display: block;
+	}
+}
 
 body,
 html {
@@ -368,300 +462,181 @@ body {
 	}
 
 	.hero {
-		padding: 170px 10px 130px 10px;
-		min-height: 700px;
-		background-image: url('../i/hero-gradient.png');
-		// fallback image
+		background: $blue;
+		background: radial-gradient(at 35%,#3CB6EE,#0056b7);
+		background: radial-gradient(at 35%,#3CB6EE,#0056b7);
+		padding: 134px 20px 80px 30px;
 
-		background: -webkit-linear-gradient(to right, #2E21A5 , #000000);
-		background: linear-gradient(to right, #2E21A5 , #000000);
-		// linear gradient
-
-		background: -webkit-linear-gradient(left top, #2E21A5, #000000);
-		background: -o-linear-gradient(bottom right, #2E21A5, #000000);
-		background: -moz-linear-gradient(bottom right, #2E21A5, #000000);
-		background: linear-gradient(to bottom right, #2E21A5, #000000);
-		// diagonal gradient
-
-		@media #{$medium} {
-			min-height: 700px;
-			padding: 190px 40px 130px 40px;
+		@media #{$small-landscape} {
+			padding: 164px 20px 80px 20px;
 		}
-		        
 
-		.half.left {
-			position: relative;
-
-			&:before {
-				content: '+';
-				font-family: $lato;
-				color: $violet;
-				font-size: 45px;
-				position: absolute;
-				bottom: -64px;
-			}
-
-			&:after {
-				content:' ';
-				height: 5px;
-				background-color: #8830E8;
-				width: 21px;
-				left: 134px;
-				bottom: -20px;
-				display: inline-block;
-				position: absolute;
-			}
+		.inner-wrapper-wide {
+			max-width: 600px;
+			margin: 0 auto;
 		}
 
 		.title {
-			line-height: 87px;
-			width: 306px;
-			position: relative;
-
-			@media #{$small} {
-				width: 387px;
-			}
-
-			&:before {
-				content: '+';
-				font-family: $lato;
-				display: inline-block;
-				width: 100%;
-				height: 4px;
-				position: absolute;	
-				bottom: 5px;
-				color: $violet;
-				left: -66px;
-				top: 50px;
-				opacity: 0.4;
-				font-size: 65px;
-			}
-
-			&:after {
-				content:' ';
-				height: 5px;
-				background-color: #8830E8;
-				width: 21px;
-				left: -37px;
-				bottom: 35px;
-				display: inline-block;
-				position: absolute;
-			}
-
 			> h1 {
-				position: static;
-				font-size: 47px;
+				font-size: 43px;
+				position: relative;
 
-				@media #{$small} {
-					font-size: 64px;
-				}
-
-				&:before{
-					content: '+';
-					font-family: $lato;
-					display: inline-block;
-					width: 100%;
-					height: 4px;
-					position: absolute;	
-					bottom: 5px;
-					color: $violet;
-					left: 100%;
-					top: 66px;
-					opacity: 0.4;
-					font-size: 65px;
-				}
-
-				&:after{
-					@media #{$small} {
-						content: ' ';
-						display: inline-block;
-						width: 100%;
-						height: 4px;
-						position: absolute;	
-						height: 29px;
-						width: 29px;
-						bottom: 5px;
-						border: 1px solid $violet;
-						border-radius: 50%;
-						border-radius: 50%;
-						left: 183px;
-						bottom: 24px;
-						text-shadow: rgba(0,0,0,.01) 0 0 1px;
-					}
+				@media #{$small-landscape} {
+					font-size: 47px;
 				}
 			}
 
-			span {
+			h2.workshop {
+				font-size: 25px;
+				margin-bottom: 10px;
 				position: relative;
-				&:before{
-					content: ' ';
-					display: inline-block;
-					width: 100%;
-					height: 4px;
-					position: absolute;	
-					bottom: 5px;
-					background: $violet;
+				opacity: 0.7;
+
+				@media #{$small-landscape} {
+					font-size: 37px;
+					opacity: 1;
+				}
+
+				&:after {
+					content: "";
+			    	background: url(../i/snowflakes-large-white-180.svg) no-repeat;
+			    	width: 120px;
+		        	height: 160px;
+					position: absolute;
+		        	right: 0;
+		        	top: -100px;
+		        	display: block;
+
+				}
+			}
+
+			h3 {
+				font-size: 24px;
+				opacity: 0.7;
+				font-weight: $reg;
+				margin-bottom: 20px;
+
+				@media #{$small-landscape} {
+					font-size: 30px;
 				}
 			}
 		}
 
 		.sub-title {
-			position: relative;
-			&:before {
-					content: ' ';
-					border: 4px solid #8831E9;
-					width: 19px;
-					height: 19px;
-					display: inline-block;
-					position: absolute;
-					border-radius: 50%;
-					z-index: 1;
-					opacity: 4;
-					right: 140px;
-					top: -30px;
-				}
-			h3 {
-				font-size: 16px;
 				position: relative;
+				
+			h3 {
+				font-size: 13px;
 				z-index: 5;
 				font-weight: $light;
-
-				&:before {
-					content: ' ';
-					background-color: #8831E9;
-					width: 34px;
-					height: 34px;
-					display: inline-block;
-					position: absolute;
-					border-radius: 50%;
-					z-index: 1;
-					opacity: 0.4;
-					top: -42px;
-					left: -20px;
-				}
+				margin-bottom: 5px;
+				font-style: italic;
 			}
 
-			h5 {
-				font-size: 23px;
-				position: relative;
-				z-index: 5;
-
-				&:before {
-					content: ' ';
-					border: 4px solid #8831E9;
-					width: 75px;
-					height: 75px;
-					display: inline-block;
-					position: absolute;
-					border-radius: 50%;
-					z-index: 1;
-					opacity: 4;
-					top: -42px;
-					right: 220px;
-					opacity: .3;
-				}
+			&:before {
+				content: "";
+		    	background: url(../i/snowflakes-white-s.svg) no-repeat;
+		    	width: 50px;
+	        	height: 80px;
+				position: absolute;
+	        	left: -12%;
+	        	top: -30px;
+	        	display: block;
 			}
 		}
 
 		.event-info {
 			position: relative;
-			margin-bottom: -80px;
-			width: 80%;
-			float: right;
 
 			&:before {
-				content: '';
-				display:inline-block;
-				width: 126px;
-				height: 126px;
-				background-color: #240B6F;
-				border-radius: 50%;
+				content: "";
+		    	background: url(../i/snowflakes-large-white.svg) no-repeat;
+		    	width: 107px;
+	        	height: 159px;
 				position: absolute;
-				z-index: 1;
-				top: -50px;
-				left: -68px;
-				opacity: 0.4;
+	        	left: -80px;
+	        	top: -90px;
+	        	display: block;
+
 			}
 
+		
 			h3 {
-				margin-bottom: 12px;
-				z-index: 5;
+				font-weight: $xbold;
+				font-size: 14px;
+				font-family: $open;
 				position: relative;
+				margin-bottom: 5px;
+
+				&:after {
+					content: "";
+			    	background: url(../i/snowflakes-white-s-180.svg) no-repeat;
+			    	width: 107px;
+		        	height: 96px;
+					position: absolute;
+		        	display: block;
+		        	right: 0;
+		        	top: -30px;
+
+
+		        	@media #{$xsmall} {
+		        		right: 21%;
+		        	}
+				}
 
 				&:before {
-					content: ' ';
-					background-image: url('../i/calendar.svg');
-					display: inline-block;
-					width: 15px;
-					height: 18px;
-					background-repeat: no-repeat;
-					padding-left: 15px;
-					position: relative;
-					top: 4px;
+					content:"\f017";
+					font-family: $font;
+					padding-right: 5px;
 				}
 			}
 
 			h4 {
-				margin-bottom: 12px;
 				z-index: 5;
 				position: relative;
-			}
+				opacity: 0.7;
 
-			button {
-				position: relative;
-				top: 20px;
-				display: block;
-
-				@media #{$medium} {
-					min-width: 168px;
-					top: 30px;
+				@media #{$small-landscape} {
+					padding-left: 19px;
 				}
 
+				span {
+					font-size: 11px;
+					font-style: italic;
+				}
+			}
+
+			h5 {
+				font-size: 11px;
+				letter-spacing: 1.9px;
+				margin-bottom: 30px;
+				opacity: 0.7;
+				padding-top: 2px;
+
+				@media #{$small-landscape} {
+				 	padding-left: 19px;
+				 }
+			}
+
+			.btn {
+				display: block;
+				width: 100%;
+				max-width: 100%;
+				margin-right: 13px;
+				margin-bottom: 20px;
+
+				@media #{$small-landscape} {
+					display: inline-block;
+					max-width: 180px;
+				}
+			}
+
+			.btn.btn--secondary {
+				margin-left: 0;
 			}
 		}
 	}
 }
-
-
-@media (max-width: 768px) {
-
-	.coming-soon-banner {
-		font-size: 12px;
-	}
-
-	.layout {
-		display: block;
-	}
-	  .half {
-		width: 100%;
-
-		&.right {
-			margin-top: 100px;
-		}
-
-		h1 {
-			font-size: 49px;
-			line-height: 65px;
-		}
-	  }
-	  
-	  .hero {
-
-	  	.half {
-	  		&.right {
-	  			margin-top: 0;
-	  		}
-	  	}
-
-	  	  .event-info {
-	  	  	min-width: 100%;
-	  	  	float: none;
-	  	  	margin-top: 120px;
-	  	  	margin-bottom: 0;
-	  	}
-	}
-}
-
 
 
 
@@ -669,6 +644,7 @@ body {
 // -----------------------
 @import "partials/navigation";
 @import "partials/about";
+@import "partials/event";
 @import "partials/speakers";
 @import "partials/sponsors";
 @import "partials/location";

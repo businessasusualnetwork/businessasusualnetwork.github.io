@@ -1,41 +1,27 @@
 .speakers {
-	background: url(../i/hp-about-bkg.png);
-	background-repeat: no-repeat; 
-	background-size: cover; 
-	.header {
-		margin-bottom: 100px;
-		position: relative;
+	position: relative;
+	
+	.inner-wrapper-wide {
+		position: static;
+		&:before {
+			content: "";
+		    width: 117px;
+	        height: 181px;
+			position: absolute;
+	        display: block;
 
-		&:after{
-			content:" ";
-			background: url(../i/shapes_about/header-circle.png) no-repeat;
-		    display: block;
-		    width: 130px;
-		    height: 160px;
-		    position: absolute;
-		    top: -42px;
-		    left: -40px;
-		    z-index: -1;		
-		}
-
-		span {
-			position: relative;
-			&:after{
-				content: " ";
-				height: 5px;
-				width: 43px;
-				display: inline-block;
-				background: $eggplant;
-				position: absolute;
-				bottom: 2px;
-				left: 0;
+	        @media #{$small} {
+				right: 10%;
+				top: -100px;
+				 opacity: .5;
+				 background: url(../i/snowflakes-m.svg) no-repeat;	
 			}
 		}
+	}
 
-		h3 {
-			padding-top: 15px;
-			padding-left: 55px;
-		}
+	.header {
+		margin-bottom: 120px;
+		position: relative;
 	}
 
 	.speaker-wrapper {
@@ -58,9 +44,10 @@
 
 		&:nth-child(odd) {
 			.image-container {
-				box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
-				-webkit-box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
-				-moz-box-shadow: -38px -38px 0px 2px rgba(83,0,229,1);
+
+				box-shadow: -38px -38px 0px 2px RGBA(37, 96, 235, 1.00);
+				-webkit-box-shadow: -38px -38px 0px 2px rgba(37, 96, 235, 1.00);
+				-moz-box-shadow: -38px -38px 0px 2px rgba(37, 96, 235, 1.00);
 				
 					@media #{$small} {
 						float: left;
@@ -74,14 +61,13 @@
 				.quote-container {
 					@media #{$small} {
 						float: left;
+						padding-left: 7%;
 					}
 
 					.speaker-info {
-						left: -30px;
-						clear: both;
 
 						h4 {
-							color: $indigo;
+							color: $royal-blue;
 						}
 					}
 				}
@@ -119,15 +105,14 @@
 				.quote-container {
 					@media #{$small} {
 						float: left;
+						padding-right: 7%;
 					}		
 
 				.speaker-info {
-					clear: both;
-					right: -30px;
-					text-align: right;
+					text-align: right;	
 
 						h4 {
-							color: $violet;
+							color: $eggplant;
 						}
 				}
 			}
@@ -150,6 +135,7 @@
 			.image-container {
 				width: 100%;
 				position: relative;
+				margin-bottom: 20px;
 
 				@media #{$small} {
 					width: 50%;
@@ -215,38 +201,27 @@
 
 				@media #{$small} {
 					width: 50%;
+					margin-top: 10%;
 				}
 
 				blockquote {
 					padding: 20px 0;
 					max-width: 100%;
 					margin: 0 auto;
-
-					@media #{$xsmall} {
-						max-width: 100%;
-					}
-
-					@media #{$small} {
-						max-width: 260px;
-					}
 				
-					&:before {
-						content: " ";
-						background: url('../i/quote.png');
-						display: block;
-						height: 20px;
-						width: 20px;
-						background-repeat: no-repeat;
-						margin: 0 auto;
-					}
+					// &:before {
+					// 	content: " ";
+					// 	background: url('../i/quote.png');
+					// 	display: block;
+					// 	height: 20px;
+					// 	width: 20px;
+					// 	background-repeat: no-repeat;
+					// 	margin: 0 auto;
+					// }
 				}
 
 				.speaker-info {
 					position: relative;
-
-					@media #{$small} {
-						padding-top: 25px;
-					}
 
 					p {
 						margin-top: 5px;
