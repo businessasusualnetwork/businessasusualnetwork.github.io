@@ -261,6 +261,7 @@ h4 {
 a {
 	@include transition(all 0.3s ease-in-out);
 	text-decoration: none;
+	color: $violet;
 
 	&:hover,
 	&:active {
