@@ -563,9 +563,13 @@ body {
 			}
 
 			p {
-				margin: 5px 0 5px 17px;
+				margin: 5px 0 5px 0;
 				font-weight: $reg;
 				font-style: italic;
+
+				@media #{$small-landscape} {
+					margin: 5px 0 5px 18px;
+				}
 			}
 
 		
