@@ -492,11 +492,9 @@ body {
 				font-size: 25px;
 				margin-bottom: 10px;
 				position: relative;
-				opacity: 0.7;
 
 				@media #{$small-landscape} {
 					font-size: 37px;
-					opacity: 1;
 				}
 
 				&:after {
